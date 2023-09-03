@@ -1,15 +1,29 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import {
+	createBrowserRouter,
+	createRoutesFromElements,
+	Route,
+	RouterProvider,
+} from "react-router-dom";
 import "./App.css";
+import Favorite from "./pages/Favorite";
+import Home from "./pages/Home";
+import RootLayout from "./layouts/RootLayout";
+import Trash from "./pages/Trash";
 
 function App() {
-	const [count, setCount] = useState(0);
+	const router = createBrowserRouter(
+		createRoutesFromElements(
+			<Route path="/" element={<RootLayout />}>
+				<Route index element={<Home />}></Route>
+				<Route path="favorite" element={<Favorite />}></Route>
+				<Route path="trash" element={<Trash />}></Route>
+			</Route>
+		)
+	);
 
 	return (
 		<>
-			<h1>ALL Notes</h1>
-			<p>50 notes</p>
+			<RouterProvider router={router} />
 		</>
 	);
 }

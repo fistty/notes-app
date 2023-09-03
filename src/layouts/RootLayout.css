@@ -1,0 +1,51 @@
+h1 {
+  text-align: center;
+}
+
+h1 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.nav {
+  border: 1px solid transparent;
+
+}
+
+.nav-ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1.4rem;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-list a {
+  color: var(--color);
+  text-decoration: unset;
+  font-size: 18px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding-inline: 0.5rem
+}
+
+.nav-list a:hover {
+  color: white
+}
+
+.nav-list a:visited {
+  text-decoration: none;
+  color: unset;
+}
+
+.nav-list:last-of-type {
+  margin-right: 1rem;
+}
+
+.nav-list a.active {
+  border-color: white;
+  color: white
+}
