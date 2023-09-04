@@ -49,3 +49,11 @@ h1 {
   border-color: white;
   color: white
 }
+
+.nav-button {
+  margin-right: auto;
+  margin-left: 1rem;
+  color: var(--color);
+  border: var(--color);
+  background: transparent
+}
