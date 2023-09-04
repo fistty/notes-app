@@ -107,7 +107,7 @@ h1 {
 
 @media screen and (max-width: 520px) {
   .nav {
-    position: absolute;
+    /* position: absolute; */
     background-color: burlywood
   }
 }
