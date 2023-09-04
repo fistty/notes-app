@@ -17,24 +17,23 @@ function RootLayout() {
 			<nav className="nav">
 				{/* <SlNotebook size={"2rem"} /> */}
 				<ul className="nav-ul">
-					<li className="nav-list nav-button">
-						<button>
+					<li className="nav-list nav-list-button">
+						<button className="nav-button">
 							<svg
 								stroke="currentColor"
 								fill="none"
 								strokeWidth="2"
 								viewBox="0 0 24 24"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="h-4 w-4 shrink-0"
-								height="1em"
-								width="1em"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								height="1.1rem"
+								width="1.1rem"
 								xmlns="http://www.w3.org/2000/svg"
 							>
 								<line x1="12" y1="5" x2="12" y2="19"></line>
 								<line x1="5" y1="12" x2="19" y2="12"></line>
 							</svg>{" "}
-							All Notes
+							New Note...
 						</button>
 					</li>
 					<li className="nav-list">

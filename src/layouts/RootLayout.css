@@ -1,5 +1,6 @@
 h1 {
   text-align: center;
+  color: var(--color-main)
 }
 
 h1 {
@@ -8,19 +9,28 @@ h1 {
 }
 
 .nav {
-  border: 1px solid red;
-
+  background-color: #000;
+  border-bottom: 2px solid #333;
+  padding-block: 0.5rem;
 }
 
 .nav-ul {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  gap: 1.4rem;
+  gap: 1rem;
+
 }
 
 .nav-list {
   display: flex;
+  padding-inline: 0.5rem;
+  border-radius: 6px;
+  transition: all 200ms ease;
+}
+
+.nav-list:not(.nav-list-button):hover {
+  background-color: #333
 }
 
 .nav-list a {
@@ -29,7 +39,23 @@ h1 {
   font-size: 18px;
   border: 2px solid transparent;
   border-radius: 5px;
-  padding-inline: 0.5rem
+  position: relative;
+}
+
+.nav-list a:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 135%;
+  height: 3px;
+  background-color: white;
+}
+
+.nav-list a.active:after {
+  opacity: 1
 }
 
 .nav-list a:hover {
@@ -46,14 +72,37 @@ h1 {
 }
 
 .nav-list a.active {
-  border-color: white;
   color: white
 }
 
-.nav-button {
+.nav-list-button {
   margin-right: auto;
   margin-left: 1rem;
-  color: var(--color);
-  border: var(--color);
-  background: transparent
+}
+
+.nav-button {
+  color: black;
+  border: 1px solid var(--color-main);
+  background-color: var(--color-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-inline: 0.5rem;
+  font-family: 'Open Sans';
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background-color: white;
+}
+
+@media screen and (max-width: 520px) {
+  .nav {
+    position: absolute;
+    background-color: burlywood
+  }
 }
