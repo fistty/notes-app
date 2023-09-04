@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { PiNotePencilDuotone } from "react-icons/pi";
+import { PathContext } from "../helpers/pathContext";
 
 function Home() {
+	const { path, setPath } = useContext(PathContext);
+	useEffect(() => {
+		setPath("All Notes");
+	}, []);
 	return (
 		<div className="home">
-			{/* <h1>ALL Notes</h1>
-			<p>50 notes</p> */}
-			<h1>Empty</h1>
-			<p>No notes yet</p>
+			<h1>No notes yet</h1>
 			<button>
 				<PiNotePencilDuotone color="red" />
 			</button>

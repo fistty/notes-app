@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { PathContext } from "../helpers/pathContext";
 
 function Trash() {
+	const { setPath } = useContext(PathContext);
+	useEffect(() => {
+		setPath("Trash");
+	}, []);
 	return (
 		<>
-			<h1>Trash</h1>
-			<p>Empty</p>
+			<h1>No deleted note</h1>
 		</>
 	);
 }

@@ -9,8 +9,11 @@ import Favorite from "./pages/Favorite";
 import Home from "./pages/Home";
 import RootLayout from "./layouts/RootLayout";
 import Trash from "./pages/Trash";
+import { PathContext } from "./helpers/pathContext";
+import { useState } from "react";
 
 function App() {
+	const [path, setPath] = useState("COMPONENT");
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route path="/" element={<RootLayout />}>
@@ -23,7 +26,10 @@ function App() {
 
 	return (
 		<>
-			<RouterProvider router={router} />
+			<PathContext.Provider value={{ path, setPath }}>
+				{" "}
+				<RouterProvider router={router} />
+			</PathContext.Provider>
 		</>
 	);
 }
