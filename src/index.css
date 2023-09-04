@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap');
+
 *,
 *::before,
 *::after {
@@ -7,11 +9,10 @@
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
   line-height: 1.5;
-
-  color-scheme: light dark;
-  background-color: #242424;
+  /* background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,8 +21,15 @@
   -webkit-text-size-adjust: 100%;
 
   --color: rgba(255, 255, 255, 0.87);
+  --color-main: rgb(237, 237, 237);
+  --font-open: 'Open Sans', sans-serif;
+
 }
 
+body {
+  color: var(--color-main);
+  background-color: #111;
+}
 
 /* @media (prefers-color-scheme: light) {
   :root {
