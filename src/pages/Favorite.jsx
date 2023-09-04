@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from "react";
 import { PathContext } from "../helpers/pathContext";
-import usePath from "../helpers/usePath";
 
 function Favorite() {
 	const { setPath } = useContext(PathContext);
