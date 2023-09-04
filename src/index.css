@@ -28,7 +28,8 @@
 
 body {
   color: var(--color-main);
-  background-color: #111;
+  background-color: #111111;
+  min-height: 100vh;
 }
 
 /* @media (prefers-color-scheme: light) {

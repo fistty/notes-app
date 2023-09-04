@@ -15,10 +15,9 @@ function RootLayout() {
 		<div className="root-layout">
 			<h1 className="root-h1">{path}</h1>
 			<nav className="nav">
-				{/* <SlNotebook size={"2rem"} /> */}
 				<ul className="nav-ul">
-					<li className="nav-list nav-list-button">
-						<button className="nav-button">
+					<li className="nav-list nav-list-new">
+						<NavLink className="nav-new" to="/new">
 							<svg
 								stroke="currentColor"
 								fill="none"
@@ -34,16 +33,22 @@ function RootLayout() {
 								<line x1="5" y1="12" x2="19" y2="12"></line>
 							</svg>{" "}
 							New Note...
-						</button>
+						</NavLink>
 					</li>
 					<li className="nav-list">
-						<NavLink to="/">All Notes</NavLink>
+						<NavLink className="nav-a" to="/">
+							All Notes
+						</NavLink>
 					</li>
 					<li className="nav-list">
-						<NavLink to="/favorite">Favorites</NavLink>
+						<NavLink className="nav-a" to="/favorite">
+							Favorites
+						</NavLink>
 					</li>
 					<li className="nav-list">
-						<NavLink to="/trash">Trash</NavLink>
+						<NavLink className="nav-a" to="/trash">
+							Trash
+						</NavLink>
 					</li>
 				</ul>
 			</nav>

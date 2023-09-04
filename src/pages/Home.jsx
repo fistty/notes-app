@@ -10,9 +10,7 @@ function Home() {
 	return (
 		<div className="home">
 			<h1>No notes yet</h1>
-			<button>
-				<PiNotePencilDuotone color="red" />
-			</button>
+			<button>{/* <PiNotePencilDuotone color="red" /> */}</button>
 		</div>
 	);
 }
