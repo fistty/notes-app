@@ -13,7 +13,10 @@ input {
   width: 100%;
   padding-block: 0.3rem;
   font-family: var(--font-open);
-  font-size: 16px
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
 }
 
 textarea {
@@ -21,4 +24,7 @@ textarea {
   height: 100%;
   font-family: var(--font-open);
   font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
 }
