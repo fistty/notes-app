@@ -9,7 +9,7 @@ import Favorite from "./pages/Favorite";
 import Home from "./pages/Home";
 import RootLayout from "./layouts/RootLayout";
 import Trash from "./pages/Trash";
-import { PathContext } from "./helpers/pathContext";
+import { PathContext } from "./contexts/pathContext";
 import { useState } from "react";
 
 function App() {

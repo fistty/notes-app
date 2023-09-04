@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { PiNotePencilDuotone } from "react-icons/pi";
-import { PathContext } from "../helpers/pathContext";
+import { PathContext } from "../contexts/pathContext";
 
 function Home() {
 	const { path, setPath } = useContext(PathContext);

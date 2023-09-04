@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { PathContext } from "../helpers/pathContext";
+import { PathContext } from "../contexts/pathContext";
 
 function Trash() {
 	const { setPath } = useContext(PathContext);

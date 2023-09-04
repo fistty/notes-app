@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 import { FaBars } from "react-icons/fa6";
 import { SlNotebook } from "react-icons/sl";
-import { PathContext } from "../helpers/pathContext";
+import { PathContext } from "../contexts/pathContext";
 import "./RootLayout.css";
 
 function RootLayout() {
