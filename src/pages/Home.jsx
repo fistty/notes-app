@@ -1,16 +1,17 @@
 import React, { useContext, useEffect } from "react";
 import { PiNotePencilDuotone } from "react-icons/pi";
-import { PathContext } from "../contexts/pathContext";
+import { NoteContext } from "../contexts/NoteContext";
+import "./Home.css";
 
 function Home() {
-	const { path, setPath } = useContext(PathContext);
+	const { path, setPath } = useContext(NoteContext);
 	useEffect(() => {
 		setPath("All Notes");
 	}, []);
 	return (
-		<div className="home">
+		<div id="home" className="home">
 			<h1>No notes yet</h1>
-			<button>{/* <PiNotePencilDuotone color="red" /> */}</button>
+			<p>Tap the Add button to create a note</p>
 		</div>
 	);
 }

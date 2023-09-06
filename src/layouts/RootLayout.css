@@ -11,20 +11,19 @@ h1 {
 .nav {
   background-color: #000;
   border-bottom: 2px solid #333;
-  padding-block: 0.5rem;
 }
 
 .nav-ul {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
   gap: 1rem;
-
+  justify-content: flex-end;
+  align-items: center
 }
 
 .nav-list {
   display: flex;
-  padding-inline: 0.5rem;
+  padding-inline: 0.6rem;
   border-radius: 6px;
   transition: all 200ms ease;
 }
@@ -33,24 +32,29 @@ h1 {
   background-color: #333
 }
 
+.nav-list:not(.nav-list-new) {
+  height: 30px
+}
+
 .nav-list .nav-a {
   color: var(--color);
   text-decoration: unset;
-  font-size: 18px;
+  font-size: 20px;
   border: 2px solid transparent;
   border-radius: 5px;
   position: relative;
 }
 
-.nav-list .nav-aa:after {
+.nav-list .nav-a:after {
   content: "";
   position: absolute;
   opacity: 0;
-  bottom: -11px;
+  bottom: -7px;
   left: 50%;
   transform: translateX(-50%);
   width: 135%;
   height: 3px;
+  border-radius: 8px;
   background-color: white;
 }
 
@@ -89,12 +93,14 @@ h1 {
   justify-content: center;
   gap: 0.5rem;
   padding-inline: 0.5rem;
+  padding-block: 0.5rem;
   font-family: 'Open Sans';
   font-size: 15px;
   font-weight: 600;
   border-radius: 6px;
   cursor: pointer;
   text-decoration: none;
+  transition: all 200ms ease
 }
 
 .nav-new:visited {
@@ -102,7 +108,8 @@ h1 {
 }
 
 .nav-new:hover {
-  background-color: white;
+  background-color: transparent;
+  color: var(--color-main)
 }
 
 @media screen and (max-width: 520px) {

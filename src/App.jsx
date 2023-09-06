@@ -9,7 +9,7 @@ import Favorite from "./pages/Favorite";
 import Home from "./pages/Home";
 import RootLayout from "./layouts/RootLayout";
 import Trash from "./pages/Trash";
-import { PathContext } from "./contexts/pathContext";
+import { NoteContext } from "./contexts/NoteContext";
 import { useState } from "react";
 import NewNote from "./pages/NewNote";
 
@@ -28,10 +28,9 @@ function App() {
 
 	return (
 		<>
-			<PathContext.Provider value={{ path, setPath }}>
-				{" "}
+			<NoteContext.Provider value={{ path, setPath }}>
 				<RouterProvider router={router} />
-			</PathContext.Provider>
+			</NoteContext.Provider>
 		</>
 	);
 }

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
-import { PathContext } from "../contexts/pathContext";
+import { NoteContext } from "../contexts/NoteContext";
 
 function Favorite() {
-	const { setPath } = useContext(PathContext);
+	const { setPath } = useContext(NoteContext);
 	useEffect(() => {
 		setPath("Favorites");
 	}, []);
