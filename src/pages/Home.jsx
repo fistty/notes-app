@@ -4,7 +4,7 @@ import { NoteContext } from "../contexts/NoteContext";
 import "./Home.css";
 
 function Home() {
-	const { path, setPath } = useContext(NoteContext);
+	const { setPath } = useContext(NoteContext);
 	useEffect(() => {
 		setPath("All Notes");
 	}, []);

@@ -1,36 +1,72 @@
 .new-note {
-  /* border: 1px solid red; */
-  height: 100vh;
   max-width: 500px;
   margin: 0 auto;
+}
+
+form {
+  height: 100vh;
 }
 
 input,
 textarea {
   background: #000;
   color: white;
-  padding-left: 1.5rem;
-  font-size: 18px;
-
 }
 
 input {
   width: 100%;
   padding-block: 0.4rem;
   font-family: var(--font-open);
-  /* font-size: 16px; */
+  font-size: 22px;
+  /* padding-left: 0.4rem; */
   border: none;
-  border-bottom: 2px solid #333;
+  /* border-bottom: 2px solid #333; */
   outline: none;
+
 }
 
 textarea {
   width: 100%;
   height: 100%;
   font-family: var(--font-open);
-  padding-block: 0.6rem;
+  font-size: 18px;
+  padding-left: 1.5rem;
+  padding-block: 0.8rem;
   border: none;
   border-bottom: 2px solid #333;
   outline: none;
   resize: none;
+}
+
+.title-input-div {
+  background-color: #000;
+  display: flex;
+  gap: 0.4rem;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  border-bottom: 2px solid #333;
+  padding-left: 0.1rem;
+  /* padding-block: 0.5rem; */
+  /* height: 50px */
+}
+
+.back-button {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  /* border: 1px solid red; */
+  border: none;
+  padding-inline: 0.2rem;
+  padding-block: 0.2rem;
+  transition: all 200ms ease;
+  height: 42px;
+  width: 42px;
+}
+
+.back-button:hover {
+  background-color: #333
 }

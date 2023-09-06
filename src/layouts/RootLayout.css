@@ -53,7 +53,7 @@ h1 {
   left: 50%;
   transform: translateX(-50%);
   width: 135%;
-  height: 3px;
+  height: 2px;
   border-radius: 8px;
   background-color: white;
 }
