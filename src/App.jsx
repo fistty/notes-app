@@ -1,17 +1,17 @@
+import { useEffect, useState } from "react";
 import {
 	createBrowserRouter,
 	createRoutesFromElements,
 	Route,
 	RouterProvider,
 } from "react-router-dom";
-import "./App.css";
 import Favorite from "./pages/Favorite";
 import Home from "./pages/Home";
 import RootLayout from "./layouts/RootLayout";
 import Trash from "./pages/Trash";
+import NoteForm from "./pages/NoteForm";
 import { NoteContext } from "./contexts/NoteContext";
-import { useEffect, useState } from "react";
-import NewNote from "./pages/NewNote";
+import "./App.css";
 
 function App() {
 	// State for current path and notes
@@ -26,20 +26,43 @@ function App() {
 				<Route index element={<Home />}></Route>
 				<Route path="favorite" element={<Favorite />}></Route>
 				<Route path="trash" element={<Trash />}></Route>
-				<Route path="new" element={<NewNote />}></Route>
+				<Route path="new" element={<NoteForm />}></Route>
 			</Route>
 		)
 	);
 
+	const clear = () => {
+		localStorage.removeItem("notes");
+	};
+
+	const get = () => {
+		console.log(notes);
+	};
+
 	// Load notes from localStorage
 	useEffect(() => {
-		const storedNotes = JSON.parse(localStorage.getItem("notes")) || [];
-		setNotes(storedNotes);
-	}, [refresh]);
+		const storedNotes = JSON.parse(localStorage.getItem("notes"));
+		if (storedNotes) {
+			setNotes(storedNotes);
+		}
+	}, []);
+
+	// Save notes to localStorage whenever 'notes' or 'refresh' changes
+	useEffect(() => {
+		localStorage.setItem("notes", JSON.stringify(notes));
+	}, [notes, refresh]);
 
 	return (
 		<>
-			<NoteContext.Provider value={{ path, setPath, notes, setRefresh }}>
+			<button className="clear" onClick={clear}>
+				CLEAR
+			</button>
+			<button className="get" onClick={get}>
+				GET
+			</button>
+			<NoteContext.Provider
+				value={{ notes, setNotes, refresh, setRefresh, path, setPath }}
+			>
 				<RouterProvider router={router} />
 			</NoteContext.Provider>
 		</>
