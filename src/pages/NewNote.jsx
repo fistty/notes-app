@@ -17,6 +17,13 @@ function NewNote() {
 	const handleBackButton = (e) => {
 		e.preventDefault();
 
+		if (title.length > 0 || noteText.length > 0) {
+			const newId = new Date().toDateString();
+			const newNoteObj = { id: newId, note: noteText, favorite: false };
+
+			localStorage.setItem(notes, JSON.stringify(newNotesObj));
+		}
+
 		navigate("/");
 
 		console.log("back clicked");
