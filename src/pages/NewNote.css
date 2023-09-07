@@ -19,7 +19,7 @@ input {
   font-family: var(--font-open);
   font-size: 22px;
   /* padding-left: 0.4rem; */
-  border: none;
+  border: 1px solid burlywood;
   /* border-bottom: 2px solid #333; */
   outline: none;
 
@@ -63,10 +63,55 @@ textarea {
   padding-inline: 0.2rem;
   padding-block: 0.2rem;
   transition: all 200ms ease;
+  aspect-ratio: 1/1;
   height: 42px;
   width: 42px;
 }
 
 .back-button:hover {
   background-color: #333
+}
+
+.favorite-button {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  padding-inline: 0.2rem;
+  padding-block: 0.2rem;
+  transition: all 200ms ease;
+  height: 42px;
+  width: 42px;
+}
+
+.favorite-svg {
+  transition: all 200ms ease;
+  color: white;
+}
+
+.favorite-svg:hover {
+  fill: #ffe234;
+  color: #ffe234
+}
+
+.delete-button {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: none;
+  padding-inline: 0.2rem;
+  padding-block: 0.2rem;
+  transition: all 200ms ease;
+  height: 42px;
+  width: 42px;
+  cursor: pointer;
+}
+
+.delete-svg {
+  /* fill: transparent */
 }
