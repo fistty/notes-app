@@ -1,15 +1,22 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { NoteContext } from "../contexts/NoteContext";
 import { FiStar, FiTrash } from "react-icons/fi";
 import "./NewNote.css";
+import TitleInput from "../components/TitleInput";
+import NoteInput from "../components/NoteInput";
 
 function NewNote() {
+	const [title, setTitle] = useState("");
+	const [noteText, setNoteText] = useState("");
+
 	const { setPath } = useContext(NoteContext);
 	const navigate = useNavigate();
+
 	const handleBackButton = (e) => {
 		e.preventDefault();
+
 		navigate("/");
 
 		console.log("back clicked");
@@ -18,9 +25,11 @@ function NewNote() {
 	const handleButton = (e) => {
 		e.preventDefault();
 	};
+
 	useEffect(() => {
 		setPath("New Note");
 	}, []);
+
 	return (
 		<div className="new-note">
 			<form action="">
@@ -28,7 +37,7 @@ function NewNote() {
 					<button onClick={handleBackButton} className="back-button buttons">
 						<FaChevronLeft color="white" size="1.5rem" title="Save" />
 					</button>
-					<input className="title-input" placeholder="Title" />
+					<TitleInput title={title} setTitle={setTitle} />
 					<button onClick={handleButton} className="favorite-button buttons">
 						<FiStar title="Add to favorite" size="1.5rem" className="favorite-svg" />
 					</button>
@@ -39,7 +48,7 @@ function NewNote() {
 						<FiSave size="1.6rem" className="save-svg" title="Save Note" />
 					</button> */}
 				</div>
-				<textarea placeholder="Note..." />
+				<NoteInput noteText={noteText} setNoteText={setNoteText} />
 			</form>
 		</div>
 	);

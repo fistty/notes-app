@@ -10,11 +10,15 @@ import Home from "./pages/Home";
 import RootLayout from "./layouts/RootLayout";
 import Trash from "./pages/Trash";
 import { NoteContext } from "./contexts/NoteContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NewNote from "./pages/NewNote";
 
 function App() {
+	// State for current path and notes
 	const [path, setPath] = useState("");
+	const [notes, setNotes] = useState([]);
+
+	// Create a router with routes
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route path="/" element={<RootLayout />}>
@@ -26,9 +30,15 @@ function App() {
 		)
 	);
 
+	// Load notes from localStorage
+	useEffect(() => {
+		const storedNotes = JSON.parse(localStorage.getItem("notes")) || [];
+		setNotes(storedNotes);
+	}, []);
+
 	return (
 		<>
-			<NoteContext.Provider value={{ path, setPath }}>
+			<NoteContext.Provider value={{ path, setPath, notes }}>
 				<RouterProvider router={router} />
 			</NoteContext.Provider>
 		</>
