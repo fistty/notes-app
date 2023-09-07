@@ -17,6 +17,7 @@ function App() {
 	// State for current path and notes
 	const [path, setPath] = useState("");
 	const [notes, setNotes] = useState([]);
+	const [refresh, setRefresh] = useState(true);
 
 	// Create a router with routes
 	const router = createBrowserRouter(
@@ -34,11 +35,11 @@ function App() {
 	useEffect(() => {
 		const storedNotes = JSON.parse(localStorage.getItem("notes")) || [];
 		setNotes(storedNotes);
-	}, []);
+	}, [refresh]);
 
 	return (
 		<>
-			<NoteContext.Provider value={{ path, setPath, notes }}>
+			<NoteContext.Provider value={{ path, setPath, notes, setRefresh }}>
 				<RouterProvider router={router} />
 			</NoteContext.Provider>
 		</>
