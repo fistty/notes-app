@@ -5,7 +5,6 @@ function Favorite() {
 	const { notes, setPath } = useContext(NoteContext);
 	useEffect(() => {
 		setPath("Favorites");
-		console.log(notes);
 	}, []);
 	return (
 		<>

@@ -1,17 +1,27 @@
 import React, { useContext, useEffect } from "react";
 import { PiNotePencilDuotone } from "react-icons/pi";
+import NoteItem from "../components/NoteItem";
 import { NoteContext } from "../contexts/NoteContext";
 import "./Home.css";
 
 function Home() {
-	const { setPath } = useContext(NoteContext);
+	const { setPath, notes } = useContext(NoteContext);
 	useEffect(() => {
 		setPath("All Notes");
 	}, []);
+
+	if (notes.length < 1) {
+		return (
+			<div id="home" className="home-empty">
+				<h1>No notes yet</h1>
+				<p className="para-empty">Tap the Add button to create a note</p>
+			</div>
+		);
+	}
+
 	return (
 		<div id="home" className="home">
-			<h1>No notes yet</h1>
-			<p>Tap the Add button to create a note</p>
+			<NoteItem notes={notes} />
 		</div>
 	);
 }

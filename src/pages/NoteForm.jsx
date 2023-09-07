@@ -6,28 +6,31 @@ import { FiStar, FiTrash } from "react-icons/fi";
 import "./NewNote.css";
 import TitleInput from "../components/TitleInput";
 import NoteInput from "../components/NoteInput";
+import { generateUniqueId } from "../helpers/generateRandomId";
 
 function NoteForm() {
-	const [title, setTitle] = useState("");
-	const [noteText, setNoteText] = useState("");
+	const [title, setTitle] = useState("This is the Title ");
+	const [noteText, setNoteText] = useState("This is the note ");
 
-	const { notesArr, setPath, refresh, setRefresh } = useContext(NoteContext);
+	const { notes, setNotes, setPath, refresh, setRefresh } =
+		useContext(NoteContext);
 	const navigate = useNavigate();
 
 	const handleBackButton = (e) => {
 		e.preventDefault();
 
 		if (title.length > 0 || noteText.length > 0) {
-			const id = new Date().getTime();
-			const newNoteObj = { id, note: noteText, favorite: false };
-			notesArr.push(newNoteObj);
-			localStorage.setItem("notes", JSON.stringify(notesArr));
+			const id = generateUniqueId();
+			const newNoteObj = { id, title, note: noteText, favorite: false };
+			setNotes((prev) => {
+				const temp = [...prev];
+				temp.push(newNoteObj);
+				return temp;
+			});
 			setRefresh(!refresh);
 		}
 
 		navigate("/");
-
-		console.log("back clicked");
 	};
 
 	const handleButton = (e) => {
