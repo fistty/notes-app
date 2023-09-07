@@ -12,8 +12,7 @@ function NoteForm() {
 	const [title, setTitle] = useState("This is the Title ");
 	const [noteText, setNoteText] = useState("This is the note ");
 
-	const { notes, setNotes, setPath, refresh, setRefresh } =
-		useContext(NoteContext);
+	const { setNotes, setPath, refresh, setRefresh } = useContext(NoteContext);
 	const navigate = useNavigate();
 
 	const handleBackButton = (e) => {
