@@ -1,12 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { MdDelete, MdFavoriteBorder, MdOutlineDelete } from "react-icons/md";
-import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { NoteContext } from "../contexts/NoteContext";
+import { FiStar, FiTrash } from "react-icons/fi";
 import "./NewNote.css";
-import { FiStar } from "react-icons/fi";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 function NewNote() {
 	const { setPath } = useContext(NoteContext);
@@ -28,21 +25,19 @@ function NewNote() {
 		<div className="new-note">
 			<form action="">
 				<div className="title-input-div">
-					<button onClick={handleBackButton} className="back-button">
-						<FaChevronLeft color="white" size="1.5rem" />
+					<button onClick={handleBackButton} className="back-button buttons">
+						<FaChevronLeft color="white" size="1.5rem" title="Save" />
 					</button>
 					<input className="title-input" placeholder="Title" />
-					<button onClick={handleButton} className="favorite-button">
+					<button onClick={handleButton} className="favorite-button buttons">
 						<FiStar title="Add to favorite" size="1.5rem" className="favorite-svg" />
 					</button>
-					<button onClick={handleButton} className="delete-button">
-						<MdOutlineDelete
-							size="1.6rem"
-							color="white"
-							className="delete-svg"
-							title="Delete Note"
-						/>
+					<button onClick={handleButton} className="delete-button buttons">
+						<FiTrash size="1.4rem" className="delete-svg" title="Delete note" />
 					</button>
+					{/* <button onClick={handleButton} className="save-button buttons">
+						<FiSave size="1.6rem" className="save-svg" title="Save Note" />
+					</button> */}
 				</div>
 				<textarea placeholder="Note..." />
 			</form>
