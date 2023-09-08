@@ -22,7 +22,12 @@
   overflow: hidden;
   max-height: 200px;
   border-radius: 8px;
+  text-decoration: none;
+  color: unset
+}
 
+.note-item:visited {
+  color: unset
 }
 
 .note-item p {
@@ -33,6 +38,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   padding: 0.5rem;
+  padding-inline: 1rem;
   background-color: #333;
 }
 
