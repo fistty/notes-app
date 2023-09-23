@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { FiStar, FiTrash } from "react-icons/fi";
 import "./NewNote.css";
 import TitleInput from "../components/TitleInput";
-import NoteInput from "../components/NoteInput";
+import NoteText from "../components/NoteText";
 import { generateUniqueId } from "../helpers/generateRandomId";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 
@@ -55,7 +55,7 @@ function NewNoteForm() {
 						<FiTrash size="1.4rem" className="delete-svg" title="Delete note" />
 					</button>
 				</div>
-				<NoteInput noteText={noteText} setNoteText={setNoteText} />
+				<NoteText noteText={noteText} setNoteText={setNoteText} />
 			</form>
 		</div>
 	);

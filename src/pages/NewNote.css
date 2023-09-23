@@ -5,7 +5,7 @@
 
 @media screen and (min-width: 700px) {
 	.new-note {
-		max-width: 1000px;
+		max-width: 80%;
 	}
 }
 
@@ -24,9 +24,7 @@ input {
 	padding-block: 0.4rem;
 	font-family: var(--font-open);
 	font-size: 19px;
-	/* padding-right: 1px; */
 	border: none;
-	/* border-bottom: 2px solid #333; */
 	outline: none;
 }
 
@@ -63,7 +61,6 @@ textarea {
 	align-items: center;
 	border-radius: 50%;
 	cursor: pointer;
-	/* border: 1px solid red; */
 	border: none;
 	padding-inline: 0.2rem;
 	padding-block: 0.2rem;
@@ -94,13 +91,18 @@ textarea {
 	color: #ffe234;
 }
 
+@media screen and (min-width: 700px) {
+	.delete-button {
+		margin-left: 0.4rem;
+	}
+}
+
 .delete-svg {
 	color: white;
 	transition: all 200ms ease;
 }
 
 .buttons:hover > .delete-svg {
-	/* fill: white; */
 	transform: scale(1.2);
 	color: red;
 	fill: red;

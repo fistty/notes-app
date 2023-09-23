@@ -1,4 +1,7 @@
-export const noteLoader = async ({ params }) => {
+import { useNoteContext } from "../../contexts/noteContext/useNoteContext";
+
+export const noteLoader = async ({ params }, notes) => {
 	const { id } = params;
-	return params;
+	const noteDetail = notes.find((noteItem) => noteItem.id === id);
+	return noteDetail;
 };

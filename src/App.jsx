@@ -26,7 +26,11 @@ function App() {
 				<Route path="favorite" element={<Favorite />}></Route>
 				<Route path="trash" element={<Trash />}></Route>
 				<Route path="new" element={<NewNoteForm />}></Route>
-				<Route path="note/:id" element={<Note />} loader={noteLoader}></Route>
+				<Route
+					path="note/:id"
+					element={<Note />}
+					loader={(e) => noteLoader(e, notes)}
+				></Route>
 			</Route>
 		)
 	);

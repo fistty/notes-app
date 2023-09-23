@@ -1,6 +1,6 @@
 import React from "react";
 
-function NoteInput({ noteText, setNoteText }) {
+function NoteText({ noteText, setNoteText }) {
 	return (
 		<>
 			<textarea
@@ -12,4 +12,4 @@ function NoteInput({ noteText, setNoteText }) {
 	);
 }
 
-export default NoteInput;
+export default NoteText;

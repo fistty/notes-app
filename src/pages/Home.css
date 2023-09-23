@@ -16,6 +16,12 @@
 	padding-inline: 1rem;
 }
 
+@media screen and (min-width: 700px) {
+	.home {
+		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+	}
+}
+
 .note-item {
 	/* border: 1px solid rgb(0, 229, 255); */
 	height: 200px;
