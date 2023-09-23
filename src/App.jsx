@@ -9,9 +9,11 @@ import Favorite from "./pages/Favorite";
 import Home from "./pages/Home";
 import RootLayout from "./layouts/RootLayout";
 import Trash from "./pages/Trash";
-import NoteForm from "./pages/NoteForm";
+import NewNoteForm from "./pages/NewNoteForm";
 import "./App.css";
 import { useNoteContext } from "./contexts/noteContext/useNoteContext";
+import { Note } from "./pages/note/Note";
+import { noteLoader } from "./pages/note/noteLoader";
 
 function App() {
 	const { notes, setNotes, refresh } = useNoteContext();
@@ -23,7 +25,8 @@ function App() {
 				<Route index element={<Home />}></Route>
 				<Route path="favorite" element={<Favorite />}></Route>
 				<Route path="trash" element={<Trash />}></Route>
-				<Route path="new" element={<NoteForm />}></Route>
+				<Route path="new" element={<NewNoteForm />}></Route>
+				<Route path="note/:id" element={<Note />} loader={noteLoader}></Route>
 			</Route>
 		)
 	);

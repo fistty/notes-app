@@ -8,7 +8,7 @@ import NoteInput from "../components/NoteInput";
 import { generateUniqueId } from "../helpers/generateRandomId";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 
-function NoteForm() {
+function NewNoteForm() {
 	const [title, setTitle] = useState("This is the Title ");
 	const [noteText, setNoteText] = useState("This is the note ");
 
@@ -61,4 +61,4 @@ function NoteForm() {
 	);
 }
 
-export default NoteForm;
+export default NewNoteForm;

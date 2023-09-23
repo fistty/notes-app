@@ -1,57 +1,57 @@
 .home-empty h1 {
-  text-align: center;
-  margin-bottom: 0;
+	text-align: center;
+	margin-bottom: 0;
 }
 
 .home-empty .para-empty {
-  text-align: center
+	text-align: center;
 }
 
 .home {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
-  row-gap: 1.5rem;
-  padding-top: 1rem;
-  padding-inline: 1rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 1rem;
+	row-gap: 1.5rem;
+	padding-top: 1rem;
+	padding-inline: 1rem;
 }
 
 .note-item {
-  /* border: 1px solid rgb(0, 229, 255); */
-  height: 200px;
-  overflow: hidden;
-  max-height: 200px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: unset
+	/* border: 1px solid rgb(0, 229, 255); */
+	height: 200px;
+	overflow: hidden;
+	max-height: 200px;
+	border-radius: 8px;
+	text-decoration: none;
+	color: unset;
+	width: 100%;
 }
 
 .note-item:visited {
-  color: unset
+	color: unset;
 }
 
 .note-item p {
-  /* border: 1px solid burlywood; */
-  border-radius: 12px;
-  font-size: 16px;
-  height: 80%;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  padding: 0.5rem;
-  padding-inline: 1rem;
-  background-color: #333;
+	border-radius: 12px;
+	font-size: 14px;
+	height: 80%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	padding: 0.5rem;
+	padding-inline: 1rem;
+	background-color: #333;
+
+	display: -webkit-box;
+	-webkit-line-clamp: 7;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	white-space: pre-wrap;
 }
 
 .note-item h2 {
-  max-width: 100%;
-  font-size: 14px;
-  text-align: center;
-  display: flex;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  white-space: nowrap;
-  margin-top: 1rem
+	font-size: 14px;
+	text-align: center;
+	text-overflow: ellipsis; /* enables ellipsis */
+	white-space: nowrap; /* keeps the text in a single line */
+	overflow: hidden; /* keeps the element from overflowing its parent */
 }
