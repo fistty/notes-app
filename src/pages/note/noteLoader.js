@@ -1,5 +1,4 @@
-export const noteLoader = ({ params }) => {
+export const noteLoader = async ({ params }) => {
 	const { id } = params;
-	console.log(id);
-	return id;
+	return params;
 };

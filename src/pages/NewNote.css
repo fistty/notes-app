@@ -1,111 +1,116 @@
 .new-note {
-  max-width: 500px;
-  margin: 0 auto;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+@media screen and (min-width: 700px) {
+	.new-note {
+		max-width: 1000px;
+	}
 }
 
 form {
-  height: 100vh;
+	height: 100vh;
 }
 
 input,
 textarea {
-  background: #000;
-  color: white;
+	background: #000;
+	color: white;
 }
 
 input {
-  width: 100%;
-  padding-block: 0.4rem;
-  font-family: var(--font-open);
-  font-size: 19px;
-  /* padding-right: 1px; */
-  border: none;
-  /* border-bottom: 2px solid #333; */
-  outline: none;
-
+	width: 100%;
+	padding-block: 0.4rem;
+	font-family: var(--font-open);
+	font-size: 19px;
+	/* padding-right: 1px; */
+	border: none;
+	/* border-bottom: 2px solid #333; */
+	outline: none;
 }
 
 textarea {
-  width: 100%;
-  height: 100%;
-  font-family: var(--font-open);
-  font-size: 17px;
-  padding-left: 1.5rem;
-  padding-block: 0.8rem;
-  border: none;
-  border-bottom: 2px solid #333;
-  outline: none;
-  resize: none;
-  opacity: 0.9;
-
+	width: 100%;
+	height: 100%;
+	font-family: var(--font-open);
+	font-size: 17px;
+	padding-left: 1.5rem;
+	padding-block: 0.8rem;
+	border: none;
+	border-bottom: 2px solid #333;
+	outline: none;
+	resize: none;
+	opacity: 0.9;
 }
 
 .title-input-div {
-  background-color: #000;
-  display: flex;
-  gap: 0.4rem;
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;
-  border-bottom: 2px solid #333;
-  padding-left: 0.1rem;
-  padding-right: 0.5rem;
+	background-color: #000;
+	display: flex;
+	gap: 0.4rem;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+	border-bottom: 2px solid #333;
+	padding-left: 0.1rem;
+	padding-right: 0.5rem;
 }
 
 .buttons {
-  background-color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  cursor: pointer;
-  /* border: 1px solid red; */
-  border: none;
-  padding-inline: 0.2rem;
-  padding-block: 0.2rem;
-  transition: all 200ms ease;
-  aspect-ratio: 1 / 1;
-  /* height: 40px; */
-  width: max-content;
+	background-color: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	cursor: pointer;
+	/* border: 1px solid red; */
+	border: none;
+	padding-inline: 0.2rem;
+	padding-block: 0.2rem;
+	transition: all 200ms ease;
+	aspect-ratio: 1 / 1;
+	/* height: 40px; */
+	width: max-content;
 }
 
 .back-button {
-  aspect-ratio: 1 / 1;
-  height: 35px;
-  width: 35px
+	aspect-ratio: 1 / 1;
+	height: 35px;
+	width: 35px;
 }
 
 .back-button:hover {
-  background-color: #333
+	background-color: #333;
 }
-
 
 .favorite-svg {
-  transition: all 200ms ease;
-  color: white;
+	transition: all 200ms ease;
+	color: white;
 }
 
-.buttons:hover>.favorite-svg {
-  transform: scale(1.3);
-  fill: #ffe234;
-  color: #ffe234
+.buttons:hover > .favorite-svg {
+	transform: scale(1.3);
+	fill: #ffe234;
+	color: #ffe234;
 }
 
 .delete-svg {
-  color: white;
-  transition: all 200ms ease;
+	color: white;
+	transition: all 200ms ease;
 }
 
-.buttons:hover>.delete-svg {
-  /* fill: white; */
-  transform: scale(1.2)
+.buttons:hover > .delete-svg {
+	/* fill: white; */
+	transform: scale(1.2);
+	color: red;
+	fill: red;
 }
 
 .save-svg {
-  color: white;
-  transition: all 200ms ease;
+	color: white;
+	transition: all 200ms ease;
 }
 
-.buttons:hover>.save-svg {
-  transform: scale(1.2)
+.buttons:hover > .save-svg {
+	transform: scale(1.2);
 }
