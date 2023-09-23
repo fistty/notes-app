@@ -5,12 +5,12 @@ import { SlNotebook } from "react-icons/sl";
 import { AiOutlinePlus } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { BsPlusLg } from "react-icons/bs";
-import { NoteContext } from "../contexts/NoteContext";
 import "./RootLayout.css";
 import Nav from "../components/Nav";
+import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 
 function RootLayout() {
-	const { path } = useContext(NoteContext);
+	const { path } = useNoteContext();
 
 	return (
 		<div className="root-layout">

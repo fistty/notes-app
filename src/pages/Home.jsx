@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import { PiNotePencilDuotone } from "react-icons/pi";
 import NoteItem from "../components/NoteItem";
-import { NoteContext } from "../contexts/NoteContext";
+import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import "./Home.css";
 
 function Home() {
-	const { setPath, notes } = useContext(NoteContext);
+	const { notes, setPath } = useNoteContext();
 	useEffect(() => {
 		setPath("All Notes");
 	}, []);

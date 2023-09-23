@@ -1,18 +1,18 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { NoteContext } from "../contexts/NoteContext";
 import { FiStar, FiTrash } from "react-icons/fi";
 import "./NewNote.css";
 import TitleInput from "../components/TitleInput";
 import NoteInput from "../components/NoteInput";
 import { generateUniqueId } from "../helpers/generateRandomId";
+import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 
 function NoteForm() {
 	const [title, setTitle] = useState("This is the Title ");
 	const [noteText, setNoteText] = useState("This is the note ");
 
-	const { setNotes, setPath, refresh, setRefresh } = useContext(NoteContext);
+	const { setNotes, setPath, refresh, setRefresh } = useNoteContext();
 	const navigate = useNavigate();
 
 	const handleBackButton = (e) => {

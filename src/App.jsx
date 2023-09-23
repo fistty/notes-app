@@ -10,14 +10,11 @@ import Home from "./pages/Home";
 import RootLayout from "./layouts/RootLayout";
 import Trash from "./pages/Trash";
 import NoteForm from "./pages/NoteForm";
-import { NoteContext } from "./contexts/NoteContext";
 import "./App.css";
+import { useNoteContext } from "./contexts/noteContext/useNoteContext";
 
 function App() {
-	// State for current path and notes
-	const [path, setPath] = useState("");
-	const [notes, setNotes] = useState([]);
-	const [refresh, setRefresh] = useState(true);
+	const { notes, setNotes, refresh } = useNoteContext();
 
 	// Create a router with routes
 	const router = createBrowserRouter(
@@ -60,11 +57,7 @@ function App() {
 			<button className="get" onClick={get}>
 				GET
 			</button>
-			<NoteContext.Provider
-				value={{ notes, setNotes, refresh, setRefresh, path, setPath }}
-			>
-				<RouterProvider router={router} />
-			</NoteContext.Provider>
+			<RouterProvider router={router} />
 		</>
 	);
 }

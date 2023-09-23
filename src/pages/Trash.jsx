@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
-import { NoteContext } from "../contexts/NoteContext";
+import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 
 function Trash() {
-	const { setPath } = useContext(NoteContext);
+	const { setPath } = useNoteContext();
 	useEffect(() => {
 		setPath("Trash");
 	}, []);
