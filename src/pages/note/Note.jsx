@@ -9,31 +9,29 @@ import { useNoteContext } from "../../contexts/noteContext/useNoteContext";
 export const Note = () => {
 	const [title, setTitle] = useState("");
 	const [noteText, setNoteText] = useState("");
+	const [isSave, setIsSave] = useState(false);
+
 	const noteDetail = useLoaderData();
 
-	const { notes, setNotes, setPath, refresh, setRefresh } = useNoteContext();
+	const { setNotes, setPath } = useNoteContext();
+
 	const navigate = useNavigate();
 
 	const handleBackButton = (e) => {
 		e.preventDefault();
 
-		if (title.length > 0 || noteText.length > 0) {
+		if (isSave === true) {
 			setNotes((prev) => {
-				const updatedNotes = prev.map((noteItem) => {
-					if (noteItem.id === noteDetail.id) {
-						// Update the matching item
-						return {
-							...noteItem,
-							title,
-							note: noteText,
-						};
-					} else {
-						// Return the original item for other elements
-						return noteItem;
+				let updatedNotes = prev.map((noteItem) => {
+					if (noteDetail.id === noteItem.id) {
+						// Updates only the note we are viewing
+						return { ...noteDetail, title, note: noteText };
 					}
+					// Does not update other notes
+					return noteItem;
 				});
 				console.log(updatedNotes);
-				return updatedNotes; // Return the updated array
+				return updatedNotes;
 			});
 		}
 
@@ -62,7 +60,7 @@ export const Note = () => {
 						<FaChevronLeft color="white" size="1.5rem" title="Save" />
 					</button>
 
-					<TitleInput title={title} setTitle={setTitle} />
+					<TitleInput title={title} setTitle={setTitle} setSave={setIsSave} />
 
 					<button onClick={handleButton} className="favorite-button buttons">
 						<FiStar title="Add to favorite" size="1.5rem" className="favorite-svg" />
@@ -72,7 +70,11 @@ export const Note = () => {
 						<FiTrash size="1.4rem" className="delete-svg" title="Delete note" />
 					</button>
 				</div>
-				<NoteText noteText={noteText} setNoteText={setNoteText} />
+				<NoteText
+					noteText={noteText}
+					setNoteText={setNoteText}
+					setSave={setIsSave}
+				/>
 			</form>
 		</div>
 	);

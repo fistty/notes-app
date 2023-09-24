@@ -1,13 +1,19 @@
 import React from "react";
 
-function TitleInput({ title, setTitle }) {
+function TitleInput({ title, setTitle, setSave }) {
+	const handleChange = (e) => {
+		setTitle(e.target.value);
+		if (setSave) {
+			setSave(true);
+		}
+	};
 	return (
 		<>
 			<input
 				className="title-input"
 				placeholder="Title"
 				value={title}
-				onChange={(e) => setTitle(e.target.value)}
+				onChange={handleChange}
 			/>
 		</>
 	);

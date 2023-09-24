@@ -53,6 +53,7 @@ function App() {
 
 	// Save notes to localStorage whenever 'notes' or 'refresh' changes
 	useEffect(() => {
+		console.log("...UPDATING LOCAL STORAGE");
 		localStorage.setItem("notes", JSON.stringify(notes));
 	}, [notes]);
 
