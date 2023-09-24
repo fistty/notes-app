@@ -23,10 +23,9 @@
 }
 
 .note-item {
-	/* border: 1px solid rgb(0, 229, 255); */
-	height: 200px;
+	height: 260px;
+	max-height: 260px;
 	overflow: hidden;
-	max-height: 200px;
 	border-radius: 8px;
 	text-decoration: none;
 	color: unset;
@@ -39,7 +38,7 @@
 
 .note-item p {
 	border-radius: 12px;
-	font-size: 14px;
+	font-size: 15px;
 	height: 80%;
 	text-overflow: ellipsis;
 	overflow: hidden;
@@ -55,9 +54,20 @@
 }
 
 .note-item h2 {
-	font-size: 14px;
+	font-size: 16px;
 	text-align: center;
 	text-overflow: ellipsis; /* enables ellipsis */
 	white-space: nowrap; /* keeps the text in a single line */
 	overflow: hidden; /* keeps the element from overflowing its parent */
+	margin-top: 0.5rem;
+}
+
+.note-item h3 {
+	font-size: 14px;
+	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	color: #949494;
+	margin-top: 0.1rem;
 }

@@ -7,6 +7,12 @@ function TitleInput({ title, setTitle, setSave }) {
 			setSave(true);
 		}
 	};
+
+	const handleBlur = () => {
+		if (title === "") {
+			setTitle("No title");
+		}
+	};
 	return (
 		<>
 			<input
@@ -14,6 +20,7 @@ function TitleInput({ title, setTitle, setSave }) {
 				placeholder="Title"
 				value={title}
 				onChange={handleChange}
+				onBlur={handleBlur}
 			/>
 		</>
 	);

@@ -10,7 +10,7 @@ import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 
 function NewNoteForm() {
 	const [title, setTitle] = useState("This is the Title ");
-	const [noteText, setNoteText] = useState("This is the note ");
+	const [noteText, setNoteText] = useState("This is a note ");
 
 	const { setNotes, setPath, refresh, setRefresh } = useNoteContext();
 	const navigate = useNavigate();
@@ -20,7 +20,13 @@ function NewNoteForm() {
 
 		if (title.length > 0 || noteText.length > 0) {
 			const id = generateUniqueId();
-			const newNoteObj = { id, title, note: noteText, favorite: false };
+			const newNoteObj = {
+				id,
+				title,
+				note: noteText,
+				favorite: false,
+				createdAt: new Date().getTime(),
+			};
 			setNotes((prev) => {
 				const temp = [...prev];
 				temp.unshift(newNoteObj);

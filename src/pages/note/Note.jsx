@@ -25,7 +25,12 @@ export const Note = () => {
 				let updatedNotes = prev.map((noteItem) => {
 					if (noteDetail.id === noteItem.id) {
 						// Updates only the note we are viewing
-						return { ...noteDetail, title, note: noteText };
+						return {
+							...noteDetail,
+							title,
+							note: noteText,
+							updated: new Date().getTime(),
+						};
 					}
 					// Does not update other notes
 					return noteItem;
