@@ -14,7 +14,7 @@ function Home() {
 		return (
 			<div id="home" className="home-empty">
 				<h1>No notes yet</h1>
-				<p className="para-empty">Tap the Add button to create a note</p>
+				<p className="para-empty">Tap the New Note button to create a note</p>
 			</div>
 		);
 	}

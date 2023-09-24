@@ -4,30 +4,37 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { FiStar, FiTrash } from "react-icons/fi";
 import TitleInput from "../../components/TitleInput";
 import NoteText from "../../components/NoteText";
-import { generateUniqueId } from "../../helpers/generateRandomId";
 import { useNoteContext } from "../../contexts/noteContext/useNoteContext";
 
 export const Note = () => {
 	const [title, setTitle] = useState("");
 	const [noteText, setNoteText] = useState("");
-
 	const noteDetail = useLoaderData();
 
-	const { setNotes, setPath, refresh, setRefresh } = useNoteContext();
+	const { notes, setNotes, setPath, refresh, setRefresh } = useNoteContext();
 	const navigate = useNavigate();
 
 	const handleBackButton = (e) => {
 		e.preventDefault();
 
 		if (title.length > 0 || noteText.length > 0) {
-			const id = generateUniqueId();
-			const newNoteObj = { id, title, note: noteText, favorite: false };
 			setNotes((prev) => {
-				const temp = [...prev];
-				temp.push(newNoteObj);
-				return temp;
+				const updatedNotes = prev.map((noteItem) => {
+					if (noteItem.id === noteDetail.id) {
+						// Update the matching item
+						return {
+							...noteItem,
+							title,
+							note: noteText,
+						};
+					} else {
+						// Return the original item for other elements
+						return noteItem;
+					}
+				});
+				console.log(updatedNotes);
+				return updatedNotes; // Return the updated array
 			});
-			setRefresh(!refresh);
 		}
 
 		navigate("/");

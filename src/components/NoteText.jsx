@@ -6,7 +6,9 @@ function NoteText({ noteText, setNoteText }) {
 			<textarea
 				placeholder="Note..."
 				value={noteText}
-				onChange={(e) => setNoteText(e.target.value)}
+				onChange={(e) => {
+					setNoteText(e.target.value);
+				}}
 			/>
 		</>
 	);

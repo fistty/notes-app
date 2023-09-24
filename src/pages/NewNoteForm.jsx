@@ -23,7 +23,7 @@ function NewNoteForm() {
 			const newNoteObj = { id, title, note: noteText, favorite: false };
 			setNotes((prev) => {
 				const temp = [...prev];
-				temp.push(newNoteObj);
+				temp.unshift(newNoteObj);
 				return temp;
 			});
 			setRefresh(!refresh);

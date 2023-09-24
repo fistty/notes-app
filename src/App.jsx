@@ -37,24 +37,24 @@ function App() {
 
 	const clear = () => {
 		localStorage.removeItem("notes");
+		console.log(localStorage);
 	};
 
 	const get = () => {
-		console.log(notes);
+		console.log(localStorage);
 	};
 
 	// Load notes from localStorage
 	useEffect(() => {
-		const storedNotes = JSON.parse(localStorage.getItem("notes"));
-		if (storedNotes) {
-			setNotes(storedNotes);
-		}
+		localStorage.removeItem("notes");
+		const storedNotes = JSON.parse(localStorage.getItem("notes")) || [];
+		setNotes(storedNotes);
 	}, []);
 
 	// Save notes to localStorage whenever 'notes' or 'refresh' changes
 	useEffect(() => {
 		localStorage.setItem("notes", JSON.stringify(notes));
-	}, [notes, refresh]);
+	}, [notes]);
 
 	return (
 		<>
