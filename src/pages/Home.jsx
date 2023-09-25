@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { PiNotePencilDuotone } from "react-icons/pi";
-import NoteItem from "../components/NoteItem";
+import NoteList from "../components/NoteList";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import "./Home.css";
 import { NewNoteButton } from "../components/NewNoteButton";
@@ -24,7 +24,7 @@ function Home() {
 
 	return (
 		<div id="home" className="home">
-			<NoteItem notes={notes} />
+			<NoteList notes={notes} />
 		</div>
 	);
 }

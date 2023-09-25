@@ -100,4 +100,8 @@ main {
 	overflow: hidden;
 	color: #949494;
 	margin-top: 0.1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.4rem;
 }

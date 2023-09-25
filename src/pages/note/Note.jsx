@@ -9,8 +9,11 @@ import { useNoteContext } from "../../contexts/noteContext/useNoteContext";
 export const Note = () => {
 	const [title, setTitle] = useState("");
 	const [noteText, setNoteText] = useState("");
+	const [isFavorite, setIsFavorite] = useState(false);
+	// Checks if a note should be saved
 	const [isSave, setIsSave] = useState(false);
 
+	// Object returned from loader
 	const noteDetail = useLoaderData();
 
 	const { setNotes, setPath } = useNoteContext();
@@ -27,6 +30,7 @@ export const Note = () => {
 						// Updates only the note we are viewing
 						return {
 							...noteDetail,
+							favorite: isFavorite,
 							title,
 							note: noteText,
 							updated: new Date().getTime(),
@@ -35,11 +39,18 @@ export const Note = () => {
 					// Does not update other notes
 					return noteItem;
 				});
+				console.log(updatedNotes);
 				return updatedNotes;
 			});
 		}
 
 		navigate("/");
+	};
+
+	const handleFavorite = (e) => {
+		e.preventDefault();
+		setIsSave(true);
+		setIsFavorite(!isFavorite);
 	};
 
 	const handleButton = (e) => {
@@ -49,11 +60,9 @@ export const Note = () => {
 	useEffect(() => {
 		setPath("Edit Note");
 		window.scrollTo({ top: 0, behavior: "smooth" });
-	}, []);
-
-	useEffect(() => {
 		setTitle(noteDetail.title);
 		setNoteText(noteDetail.note);
+		setIsFavorite(noteDetail.favorite);
 	}, []);
 
 	return (
@@ -66,8 +75,12 @@ export const Note = () => {
 
 					<TitleInput title={title} setTitle={setTitle} setSave={setIsSave} />
 
-					<button onClick={handleButton} className="favorite-button buttons">
-						<FiStar title="Add to favorite" size="1.5rem" className="favorite-svg" />
+					<button onClick={handleFavorite} className="favorite-button buttons">
+						<FiStar
+							title="Add to favorite"
+							size="1.5rem"
+							className={isFavorite === true ? "favorite-svg active" : "favorite-svg"}
+						/>
 					</button>
 
 					<button onClick={handleButton} className="delete-button buttons">

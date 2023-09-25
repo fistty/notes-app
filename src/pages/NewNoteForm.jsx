@@ -11,6 +11,7 @@ import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 function NewNoteForm() {
 	const [title, setTitle] = useState("This is the Title ");
 	const [noteText, setNoteText] = useState("This is a note ");
+	const [isFavorite, setIsFavorite] = useState(false);
 
 	const { setNotes, setPath, refresh, setRefresh } = useNoteContext();
 	const navigate = useNavigate();
@@ -24,7 +25,7 @@ function NewNoteForm() {
 				id,
 				title,
 				note: noteText,
-				favorite: false,
+				favorite: isFavorite,
 				createdAt: new Date().getTime(),
 			};
 			setNotes((prev) => {
@@ -33,9 +34,15 @@ function NewNoteForm() {
 				return temp;
 			});
 			setRefresh(!refresh);
+			console.log(newNoteObj);
 		}
 
 		navigate("/");
+	};
+
+	const handleFavorite = (e) => {
+		e.preventDefault();
+		setIsFavorite(!isFavorite);
 	};
 
 	const handleButton = (e) => {
@@ -54,8 +61,12 @@ function NewNoteForm() {
 						<FaChevronLeft color="white" size="1.5rem" title="Save" />
 					</button>
 					<TitleInput title={title} setTitle={setTitle} />
-					<button onClick={handleButton} className="favorite-button buttons">
-						<FiStar title="Add to favorite" size="1.5rem" className="favorite-svg" />
+					<button onClick={handleFavorite} className="favorite-button buttons">
+						<FiStar
+							title="Add to favorite"
+							size="1.5rem"
+							className={isFavorite === true ? "favorite-svg active" : "favorite-svg"}
+						/>
 					</button>
 					<button onClick={handleButton} className="delete-button buttons">
 						<FiTrash size="1.4rem" className="delete-svg" title="Delete note" />

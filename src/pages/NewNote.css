@@ -85,9 +85,14 @@ textarea {
 	color: white;
 }
 
-.buttons:hover > .favorite-svg {
-	transform: scale(1.3);
+.favorite-svg.active {
 	fill: #ffe234;
+	color: #ffe234;
+}
+
+.buttons:hover > .favorite-svg {
+	transform: scale(1.1);
+	/* fill: #ffe234; */
 	color: #ffe234;
 }
 
