@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function NoteItem({ notes }) {
 	const dateFormat = (date) => {
-		let option = { month: "short", day: "numeric" };
+		let option = { month: "short", day: "numeric", weekday: "short" };
 		const formattedDate = new Date(date).toLocaleDateString("en-US", option);
 		return formattedDate;
 	};

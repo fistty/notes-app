@@ -10,6 +10,13 @@ main {
 
 .home-empty .para-empty {
 	text-align: center;
+	margin-top: 1rem;
+}
+
+.home-empty .para-empty .nav-new {
+	display: inline-flex;
+	margin-inline: 0.5rem;
+	height: 35px;
 }
 
 .home {
