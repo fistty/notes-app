@@ -31,4 +31,6 @@ body {
 	color: var(--color-main);
 	background-color: #111111;
 	min-height: 100vh;
+	max-width: 1460px;
+	margin: 0 auto;
 }

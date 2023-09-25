@@ -48,6 +48,7 @@ export const Note = () => {
 	};
 
 	useEffect(() => {
+		console.log(noteDetail);
 		setPath("Edit Note");
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	}, []);
