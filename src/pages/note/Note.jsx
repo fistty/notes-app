@@ -44,7 +44,7 @@ export const Note = () => {
 			});
 		}
 
-		navigate("/");
+		navigate(-1);
 	};
 
 	const handleFavorite = (e) => {
