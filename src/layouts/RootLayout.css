@@ -19,6 +19,8 @@ h1 {
 	gap: 1rem;
 	justify-content: flex-end;
 	align-items: center;
+	max-width: 1460px;
+	margin: 0 auto;
 }
 
 .nav-list {
@@ -87,6 +89,7 @@ h1 {
 .nav-list-new {
 	margin-right: auto;
 	margin-left: 1rem;
+	padding-inline: unset;
 }
 
 .nav-new {

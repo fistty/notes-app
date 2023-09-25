@@ -5,9 +5,9 @@ import { SlNotebook } from "react-icons/sl";
 import { AiOutlinePlus } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { BsPlusLg } from "react-icons/bs";
-import "./RootLayout.css";
 import Nav from "../components/Nav";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
+import "./RootLayout.css";
 
 function RootLayout() {
 	const { path } = useNoteContext();

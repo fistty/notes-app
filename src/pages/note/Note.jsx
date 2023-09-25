@@ -35,7 +35,6 @@ export const Note = () => {
 					// Does not update other notes
 					return noteItem;
 				});
-				console.log(updatedNotes);
 				return updatedNotes;
 			});
 		}
@@ -48,7 +47,6 @@ export const Note = () => {
 	};
 
 	useEffect(() => {
-		console.log(noteDetail);
 		setPath("Edit Note");
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	}, []);
