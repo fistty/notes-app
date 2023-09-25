@@ -5,7 +5,7 @@ import {
 	Route,
 	RouterProvider,
 } from "react-router-dom";
-import Favorite from "./pages/Favorite";
+import Favorite from "./pages/favorite/Favorite";
 import Home from "./pages/Home";
 import RootLayout from "./layouts/RootLayout";
 import Trash from "./pages/Trash";
@@ -14,6 +14,7 @@ import "./App.css";
 import { useNoteContext } from "./contexts/noteContext/useNoteContext";
 import { Note } from "./pages/note/Note";
 import { noteLoader } from "./pages/note/noteLoader";
+import { favoriteLoader } from "./pages/favorite/favoriteLoader";
 
 function App() {
 	const { notes, setNotes, refresh } = useNoteContext();
@@ -23,7 +24,11 @@ function App() {
 		createRoutesFromElements(
 			<Route path="/" element={<RootLayout />}>
 				<Route index element={<Home />}></Route>
-				<Route path="favorite" element={<Favorite />}></Route>
+				<Route
+					path="favorite"
+					element={<Favorite />}
+					loader={(e) => favoriteLoader(e, notes)}
+				></Route>
 				<Route path="trash" element={<Trash />}></Route>
 				<Route path="new" element={<NewNoteForm />}></Route>
 				<Route
