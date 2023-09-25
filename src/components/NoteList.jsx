@@ -15,10 +15,16 @@ function NoteList({ notes }) {
 		} else return title;
 	};
 
+	//FRAMER MOTION
+
 	return (
 		<>
 			{notes.map((item) => (
-				<Link className="note-item" key={item.id} to={`note/${item.id.toString()}`}>
+				<Link
+					className="note-item"
+					key={item.id}
+					to={`/note/${item.id.toString()}`}
+				>
 					<p>{item.note}</p>
 					<h2>{handleNoTitle(item.title)}</h2>
 					<h3>
