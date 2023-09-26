@@ -73,7 +73,7 @@ main {
 
 .note-item p {
 	border-radius: 12px;
-	font-size: 15px;
+	font-size: 0.9375rem;
 	height: 80%;
 	text-overflow: ellipsis;
 	overflow: hidden;
@@ -89,7 +89,7 @@ main {
 }
 
 .note-item h2 {
-	font-size: 16px;
+	font-size: 1rem;
 	text-align: center;
 	text-overflow: ellipsis; /* enables ellipsis */
 	white-space: nowrap; /* keeps the text in a single line */
@@ -98,7 +98,7 @@ main {
 }
 
 .note-item h3 {
-	font-size: 14px;
+	font-size: 0.875rem;
 	text-align: center;
 	text-overflow: ellipsis;
 	white-space: nowrap;
