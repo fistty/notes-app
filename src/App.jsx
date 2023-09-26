@@ -75,8 +75,9 @@ function App() {
 			<button className="get" onClick={get}>
 				GET
 			</button>
+			<div className="backdrop"></div>
 			<div className="delete-div">
-				<p>Move note to the trash?</p>
+				<p>Move note to the Trash?</p>
 				<div className="button-container">
 					<button
 						className="cancel-button"
