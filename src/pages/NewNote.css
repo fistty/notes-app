@@ -1,6 +1,7 @@
 .new-note {
 	max-width: 500px;
 	margin: 0 auto;
+	position: relative;
 }
 
 @media screen and (min-width: 700px) {
