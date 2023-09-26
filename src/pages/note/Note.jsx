@@ -5,6 +5,7 @@ import { FiStar, FiTrash } from "react-icons/fi";
 import TitleInput from "../../components/TitleInput";
 import NoteText from "../../components/NoteText";
 import { useNoteContext } from "../../contexts/noteContext/useNoteContext";
+import "./Note.css";
 
 export const Note = () => {
 	const [title, setTitle] = useState("");
@@ -67,7 +68,14 @@ export const Note = () => {
 
 	return (
 		<div className="new-note note">
-			<form action="">
+			<div className="delete-div">
+				<p>Move note to the trash?</p>
+				<div className="button-container">
+					<button className="cancel-button">Cancel</button>
+					<button className="delete-button">Move to Trash</button>
+				</div>
+			</div>
+			<form>
 				<div className="title-input-div">
 					<button onClick={handleBackButton} className="back-button buttons">
 						<FaChevronLeft color="white" size="1.5rem" title="Save" />

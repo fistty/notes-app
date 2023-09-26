@@ -1,0 +1,6 @@
+.delete-div {
+	position: absolute;
+	background-color: white;
+	z-index: 999;
+	color: black;
+}
