@@ -93,17 +93,16 @@ textarea {
 
 .buttons:hover > .favorite-svg {
 	transform: scale(1.1);
-	/* fill: #ffe234; */
 	color: #ffe234;
 }
 
 @media screen and (min-width: 700px) {
-	.delete-button {
+	.trash-button {
 		margin-left: 0.4rem;
 	}
 }
 
-.delete-svg {
+.trash-svg {
 	color: white;
 	transition: all 200ms ease;
 }

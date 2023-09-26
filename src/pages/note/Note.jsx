@@ -84,8 +84,8 @@ export const Note = () => {
 						/>
 					</button>
 
-					<button onClick={handleButton} className="delete-button buttons">
-						<FiTrash size="1.4rem" className="delete-svg" title="Delete note" />
+					<button onClick={handleButton} className="trash-button buttons">
+						<FiTrash size="1.4rem" className="trash-svg" title="Delete note" />
 					</button>
 				</div>
 				<NoteText
