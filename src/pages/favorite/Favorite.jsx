@@ -9,6 +9,15 @@ function Favorite() {
 	useEffect(() => {
 		setPath("Favorites");
 	}, []);
+
+	if (favoriteNotes.length < 1) {
+		return (
+			<div className="home-empty">
+				<h1>No favorite note</h1>
+			</div>
+		);
+	}
+
 	return (
 		<div id="favorite" className="favorite grid">
 			<NoteList notes={favoriteNotes} />
