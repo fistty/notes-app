@@ -4,8 +4,29 @@ import { Link } from "react-router-dom";
 
 function NoteList({ notes }) {
 	const dateFormat = (date) => {
-		let option = { month: "short", day: "numeric", weekday: "short" };
-		const formattedDate = new Date(date).toLocaleDateString("en-US", option);
+		const currentDate = new Date();
+		const inputDate = new Date(date);
+		let option;
+
+		// Check if the year of the current date is not the same as the year of the input date
+		if (currentDate.getFullYear() !== inputDate.getFullYear()) {
+			// Include the "year" option in the formatting
+			option = {
+				month: "short",
+				day: "numeric",
+				weekday: "short",
+				year: "numeric",
+			};
+		} else {
+			// Exclude the "year" option in the formatting
+			option = {
+				month: "short",
+				day: "numeric",
+				weekday: "short",
+			};
+		}
+
+		const formattedDate = inputDate.toLocaleDateString("en-US", option);
 		return formattedDate;
 	};
 
@@ -14,8 +35,6 @@ function NoteList({ notes }) {
 			return "No Title";
 		} else return title;
 	};
-
-	//FRAMER MOTION
 
 	return (
 		<>
