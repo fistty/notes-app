@@ -14,7 +14,10 @@ import { useNoteContext } from "./contexts/noteContext/useNoteContext";
 import { Note } from "./pages/note/Note";
 import { noteLoader } from "./pages/note/noteLoader";
 import { favoriteLoader } from "./pages/favorite/favoriteLoader";
+import bodyScrollToggle from "body-scroll-toggle";
 import "./App.css";
+
+import bodyscroll from "body-scroll-toggle";
 
 function App() {
 	const { notes, setNotes, deletedNotes, setDeletedNotes } = useNoteContext();
@@ -72,6 +75,27 @@ function App() {
 			<button className="get" onClick={get}>
 				GET
 			</button>
+			<div className="delete-div">
+				<p>Move note to the trash?</p>
+				<div className="button-container">
+					<button
+						className="cancel-button"
+						onClick={() => {
+							bodyScrollToggle.disable();
+						}}
+					>
+						Cancel
+					</button>
+					<button
+						className="delete-button"
+						onClick={() => {
+							bodyScrollToggle.enable();
+						}}
+					>
+						Move to Trash
+					</button>
+				</div>
+			</div>
 			<RouterProvider router={router} />
 		</>
 	);

@@ -68,13 +68,6 @@ export const Note = () => {
 
 	return (
 		<div className="new-note note">
-			<div className="delete-div">
-				<p>Move note to the trash?</p>
-				<div className="button-container">
-					<button className="cancel-button">Cancel</button>
-					<button className="delete-button">Move to Trash</button>
-				</div>
-			</div>
 			<form>
 				<div className="title-input-div">
 					<button onClick={handleBackButton} className="back-button buttons">
