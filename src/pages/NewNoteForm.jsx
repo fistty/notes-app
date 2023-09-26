@@ -13,7 +13,7 @@ function NewNoteForm() {
 	const [noteText, setNoteText] = useState("This is a note ");
 	const [isFavorite, setIsFavorite] = useState(false);
 
-	const { setNotes, setPath, refresh, setRefresh } = useNoteContext();
+	const { setNotes, setPath } = useNoteContext();
 	const navigate = useNavigate();
 
 	const handleBackButton = (e) => {
@@ -33,7 +33,6 @@ function NewNoteForm() {
 				temp.unshift(newNoteObj);
 				return temp;
 			});
-			setRefresh(!refresh);
 			console.log(newNoteObj);
 		}
 
@@ -68,8 +67,8 @@ function NewNoteForm() {
 							className={isFavorite === true ? "favorite-svg active" : "favorite-svg"}
 						/>
 					</button>
-					<button onClick={handleButton} className="delete-button buttons">
-						<FiTrash size="1.4rem" className="delete-svg" title="Delete note" />
+					<button onClick={handleButton} className="trash-button buttons">
+						<FiTrash size="1.4rem" className="trash-svg" title="Delete note" />
 					</button>
 				</div>
 				<NoteText noteText={noteText} setNoteText={setNoteText} />
