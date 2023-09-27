@@ -6,6 +6,7 @@ import TitleInput from "../../components/TitleInput";
 import NoteText from "../../components/NoteText";
 import { useNoteContext } from "../../contexts/noteContext/useNoteContext";
 import "./Note.css";
+import bodyScrollToggle from "body-scroll-toggle";
 
 export const Note = () => {
 	const [title, setTitle] = useState("");
@@ -18,7 +19,7 @@ export const Note = () => {
 	// Object returned from loader
 	const noteDetail = useLoaderData();
 
-	const { setNotes, setPath } = useNoteContext();
+	const { setNotes, setPath, setIsModal } = useNoteContext();
 
 	const navigate = useNavigate();
 
@@ -55,8 +56,10 @@ export const Note = () => {
 		setIsFavorite(!isFavorite);
 	};
 
-	const handleButton = (e) => {
+	const handleDelete = (e) => {
 		e.preventDefault();
+		setIsModal(true);
+		bodyScrollToggle.disable();
 	};
 
 	useEffect(() => {
@@ -85,7 +88,7 @@ export const Note = () => {
 						/>
 					</button>
 
-					<button onClick={handleButton} className="trash-button buttons">
+					<button onClick={handleDelete} className="trash-button buttons">
 						<FiTrash size="1.4rem" className="trash-svg" title="Delete note" />
 					</button>
 				</div>
