@@ -9,14 +9,27 @@
 	left: 50px;
 }
 
+#root {
+	position: relative;
+}
+
+.backdrop {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	backdrop-filter: blur(0.1rem);
+	transition: all 200ms ease;
+	z-index: 9;
+}
+
 .delete-div {
 	background-color: #333;
 	z-index: 999;
 	color: rgb(255, 255, 255);
 	position: absolute;
-	top: 50%;
+	top: 200px;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translateX(-50%);
 	width: calc(100% - 50px);
 	max-width: 350px;
 	height: 150px;
@@ -25,6 +38,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	padding-block: 1rem;
+	z-index: 99;
 }
 
 .delete-div > p {
@@ -55,10 +69,8 @@
 
 .delete-div > .button-container > button {
 	font-size: 1rem;
-	/* padding-inline: 1.3rem; */
 	width: 50%;
 	display: block;
-	/* border: 1px solid #ffffff; */
 	border: unset;
 	border-radius: 5px;
 	font-family: var(--font-roboto);

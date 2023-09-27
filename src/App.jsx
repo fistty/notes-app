@@ -20,7 +20,8 @@ import "./App.css";
 import bodyscroll from "body-scroll-toggle";
 
 function App() {
-	const { notes, setNotes, deletedNotes, setDeletedNotes } = useNoteContext();
+	const { notes, setNotes, isModal, setIsModal, deletedNotes, setDeletedNotes } =
+		useNoteContext();
 
 	// Create a router with routes
 	const router = createBrowserRouter(
@@ -75,29 +76,32 @@ function App() {
 			<button className="get" onClick={get}>
 				GET
 			</button>
-			<div className="backdrop"></div>
-			<div className="delete-div">
-				<p>Move note to the Trash?</p>
-				<div className="button-container">
-					<button
-						className="cancel-button"
-						onClick={() => {
-							bodyScrollToggle.disable();
-						}}
-					>
-						Cancel
-					</button>
-					{/* <div className="center"></div> */}
-					<button
-						className="delete-button"
-						onClick={() => {
-							bodyScrollToggle.enable();
-						}}
-					>
-						Move to Trash
-					</button>
+			{isModal && <div className="backdrop"></div>}
+			{isModal && (
+				<div className="delete-div">
+					<p>Move note to the Trash?</p>
+					<div className="button-container">
+						<button
+							className="cancel-button"
+							onClick={() => {
+								bodyScrollToggle.enable();
+								setIsModal(false);
+							}}
+						>
+							Cancel
+						</button>
+						<button
+							className="delete-button"
+							onClick={() => {
+								bodyScrollToggle.enable();
+								setIsModal(false);
+							}}
+						>
+							Move to Trash
+						</button>
+					</div>
 				</div>
-			</div>
+			)}
 			<RouterProvider router={router} />
 		</>
 	);
