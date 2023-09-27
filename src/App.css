@@ -10,20 +10,21 @@
 }
 
 .delete-div {
-	background-color: white;
+	background-color: #333;
 	z-index: 999;
-	color: black;
+	color: rgb(255, 255, 255);
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: calc(100% - 10px);
+	width: calc(100% - 50px);
 	max-width: 400px;
-	height: 100px;
+	height: 150px;
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	padding-top: 1rem;
 }
 
 .delete-div > p {
@@ -32,16 +33,22 @@
 }
 
 .delete-div > .button-container {
-	background-color: #ccc;
 	display: flex;
+	align-items: center;
 	justify-content: flex-end;
+	gap: 1rem;
+	width: 100%;
 	height: 30px;
 }
 
 .delete-div > .button-container > button {
 	font-size: 1rem;
 	padding-inline: 1.3rem;
-	border: 1px solid #111;
+	border: 1px solid #ffffff;
 	border-radius: 5px;
 	font-family: var(--font-roboto);
+	background-color: transparent;
+	color: white;
+	height: 25px;
+	cursor: pointer;
 }

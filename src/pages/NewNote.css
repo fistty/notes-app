@@ -107,10 +107,10 @@ textarea {
 	transition: all 200ms ease;
 }
 
-.buttons:hover > .delete-svg {
+.buttons:hover > .trash-svg {
 	transform: scale(1.2);
-	color: red;
-	fill: red;
+	color: rgb(255, 255, 255);
+	fill: rgb(255, 255, 255);
 }
 
 .save-svg {
