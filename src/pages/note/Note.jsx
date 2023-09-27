@@ -11,6 +11,7 @@ export const Note = () => {
 	const [title, setTitle] = useState("");
 	const [noteText, setNoteText] = useState("");
 	const [isFavorite, setIsFavorite] = useState(false);
+
 	// Checks if a note should be saved
 	const [isSave, setIsSave] = useState(false);
 
@@ -61,10 +62,10 @@ export const Note = () => {
 	useEffect(() => {
 		setPath("Edit Note");
 		window.scrollTo({ top: 0, behavior: "smooth" });
-		setTitle(noteDetail.title);
 		setNoteText(noteDetail.note);
+		setTitle(noteDetail.title);
 		setIsFavorite(noteDetail.favorite);
-	}, []);
+	}, [noteDetail]);
 
 	return (
 		<div className="new-note note">
