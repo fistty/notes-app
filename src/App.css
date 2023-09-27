@@ -18,7 +18,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: calc(100% - 50px);
-	max-width: 350px;
+	max-width: 320px;
 	height: 150px;
 	border-radius: 10px;
 	display: flex;
@@ -36,8 +36,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 1rem;
-	width: 100%;
+	gap: 2rem;
+	width: 300px;
+	margin: 0 auto;
 	height: 30px;
 	position: relative;
 }
@@ -55,20 +56,18 @@
 
 .delete-div > .button-container > button {
 	font-size: 1rem;
-	/* padding-inline: 1.3rem; */
 	width: 50%;
 	display: block;
-	/* border: 1px solid #ffffff; */
 	border: unset;
-	border-radius: 5px;
+	border-radius: 8px;
 	font-family: var(--font-roboto);
 	background-color: transparent;
 	color: white;
-	height: 25px;
+	height: 30px;
 	cursor: pointer;
 	transition: all 250ms ease;
 }
 
 .delete-div > .button-container > button:hover {
-	background-color: #4a4a4a;
+	background-color: #616161;
 }
