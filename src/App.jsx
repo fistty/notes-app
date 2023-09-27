@@ -87,6 +87,7 @@ function App() {
 					>
 						Cancel
 					</button>
+					{/* <div className="center"></div> */}
 					<button
 						className="delete-button"
 						onClick={() => {
