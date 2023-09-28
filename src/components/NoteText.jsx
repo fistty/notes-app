@@ -9,7 +9,12 @@ function NoteText({ noteText, setNoteText, setSave }) {
 	};
 	return (
 		<>
-			<textarea placeholder="Note..." value={noteText} onChange={handleChange} />
+			<textarea
+				placeholder="Note..."
+				value={noteText}
+				onChange={handleChange}
+				name="noteText"
+			/>
 		</>
 	);
 }

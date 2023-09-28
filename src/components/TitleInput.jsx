@@ -15,6 +15,7 @@ function TitleInput({ title, setTitle, setSave }) {
 				placeholder="Title"
 				value={title}
 				onChange={handleChange}
+				name="title"
 			/>
 		</>
 	);
