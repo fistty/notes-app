@@ -33,7 +33,6 @@ function NewNoteForm() {
 				temp.unshift(newNoteObj);
 				return temp;
 			});
-			console.log(newNoteObj);
 		}
 
 		navigate("/");
