@@ -3,8 +3,7 @@ import { NoteContext } from "./NoteContext";
 
 export const NoteContextProvider = ({ children }) => {
 	const [notes, setNotes] = useState([]);
-	const [deletedNotes, setDeletedNotes] = useState([]);
-	const [refresh, setRefresh] = useState(true);
+	const [deletedNotes, setDeletedNotes] = useState([{ gas: 122 }]);
 	const [path, setPath] = useState("");
 	const [isModal, setIsModal] = useState(false);
 	return (

@@ -19,7 +19,14 @@ export const Note = () => {
 	// Object returned from loader
 	const noteDetail = useLoaderData();
 
-	const { setNotes, setPath, setIsModal } = useNoteContext();
+	const {
+		setNotes,
+		setPath,
+		deletedNotes,
+		setDeletedNotes,
+		isModal,
+		setIsModal,
+	} = useNoteContext();
 
 	const navigate = useNavigate();
 
@@ -56,6 +63,18 @@ export const Note = () => {
 		setIsFavorite(!isFavorite);
 	};
 
+	const handleCancelButton = () => {
+		bodyScrollToggle.enable();
+		setIsModal(false);
+		// To remove the bodyScrollToggle in case it didn't work
+		const body = document.querySelector("body");
+		body.style.overflow = "";
+		body.style.position = "";
+		body.style.height = "";
+		body.style.width = "";
+		body.style.top = "";
+	};
+
 	const handleDelete = (e) => {
 		e.preventDefault();
 		setIsModal(true);
@@ -70,8 +89,26 @@ export const Note = () => {
 		setIsFavorite(noteDetail.favorite);
 	}, [noteDetail]);
 
+	const handleConfirmDelete = () => {
+		setDeletedNotes((prev) => {
+			console.log(prev);
+		});
+	};
 	return (
 		<div className="new-note note">
+			{isModal && (
+				<div className="delete-div">
+					<p>Move note to the Trash?</p>
+					<div className="button-container">
+						<button className="cancel-button" onClick={handleCancelButton}>
+							Cancel
+						</button>
+						<button className="delete-button" onClick={handleConfirmDelete}>
+							Move to Trash
+						</button>
+					</div>
+				</div>
+			)}
 			<form>
 				<div className="title-input-div">
 					<button onClick={handleBackButton} className="back-button buttons">
