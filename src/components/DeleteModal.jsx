@@ -1,10 +1,13 @@
 import React from "react";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import bodyScrollToggle from "body-scroll-toggle";
+import { useNavigate } from "react-router-dom";
 
 export const DeleteModal = ({ noteDetail }) => {
-	const { isModal, setIsModal, setDeletedNotes, deletedNotes } =
+	const { setNotes, isModal, setIsModal, setDeletedNotes, deletedNotes } =
 		useNoteContext();
+
+	const navigate = useNavigate();
 
 	const handleCancelButton = () => {
 		bodyScrollToggle.enable();
@@ -19,13 +22,22 @@ export const DeleteModal = ({ noteDetail }) => {
 	};
 
 	const handleConfirmDelete = () => {
-		console.log(noteDetail);
+		// updates the deleted notes array
 		setDeletedNotes((prev) => {
-			console.log(deletedNotes);
-			const temp = [...prev];
-			const updatedNotes = temp.concat(noteDetail);
+			const updatedNotes = [noteDetail, ...prev];
+			console.log(updatedNotes);
 			return updatedNotes;
 		});
+
+		// updates the notes array
+		setNotes((prev) => {
+			const updatedNotes = [...prev].filter(
+				(noteItem) => noteItem.id !== noteDetail.id
+			);
+			return updatedNotes;
+		});
+		setIsModal(false);
+		navigate(-1);
 	};
 
 	return (
