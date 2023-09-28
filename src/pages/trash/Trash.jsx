@@ -19,9 +19,9 @@ function Trash() {
 		);
 	}
 	return (
-		<>
+		<div id="trash" className="trash grid">
 			<NoteList notes={trashNotes} />
-		</>
+		</div>
 	);
 }
 
