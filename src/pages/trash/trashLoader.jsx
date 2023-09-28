@@ -1,4 +1,3 @@
-export const trashLoader = ({ params }) => {
-	// console.log(deletedNotes);
-	return 2;
+export const trashLoader = ({ params }, deletedNotes) => {
+	return deletedNotes;
 };

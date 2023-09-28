@@ -5,8 +5,9 @@ import { FiStar, FiTrash } from "react-icons/fi";
 import TitleInput from "../../components/TitleInput";
 import NoteText from "../../components/NoteText";
 import { useNoteContext } from "../../contexts/noteContext/useNoteContext";
-import "./Note.css";
 import bodyScrollToggle from "body-scroll-toggle";
+import { DeleteModal } from "../../components/DeleteModal";
+import "./Note.css";
 
 export const Note = () => {
 	const [title, setTitle] = useState("");
@@ -19,14 +20,7 @@ export const Note = () => {
 	// Object returned from loader
 	const noteDetail = useLoaderData();
 
-	const {
-		setNotes,
-		setPath,
-		deletedNotes,
-		setDeletedNotes,
-		isModal,
-		setIsModal,
-	} = useNoteContext();
+	const { setNotes, setPath, setIsModal } = useNoteContext();
 
 	const navigate = useNavigate();
 
@@ -53,7 +47,6 @@ export const Note = () => {
 				return updatedNotes;
 			});
 		}
-
 		navigate(-1);
 	};
 
@@ -61,18 +54,6 @@ export const Note = () => {
 		e.preventDefault();
 		setIsSave(true);
 		setIsFavorite(!isFavorite);
-	};
-
-	const handleCancelButton = () => {
-		bodyScrollToggle.enable();
-		setIsModal(false);
-		// To remove the bodyScrollToggle in case it didn't work
-		const body = document.querySelector("body");
-		body.style.overflow = "";
-		body.style.position = "";
-		body.style.height = "";
-		body.style.width = "";
-		body.style.top = "";
 	};
 
 	const handleDelete = (e) => {
@@ -89,26 +70,9 @@ export const Note = () => {
 		setIsFavorite(noteDetail.favorite);
 	}, [noteDetail]);
 
-	const handleConfirmDelete = () => {
-		setDeletedNotes((prev) => {
-			console.log(prev);
-		});
-	};
 	return (
 		<div className="new-note note">
-			{isModal && (
-				<div className="delete-div">
-					<p>Move note to the Trash?</p>
-					<div className="button-container">
-						<button className="cancel-button" onClick={handleCancelButton}>
-							Cancel
-						</button>
-						<button className="delete-button" onClick={handleConfirmDelete}>
-							Move to Trash
-						</button>
-					</div>
-				</div>
-			)}
+			<DeleteModal noteDetail={noteDetail} />
 			<form>
 				<div className="title-input-div">
 					<button onClick={handleBackButton} className="back-button buttons">
