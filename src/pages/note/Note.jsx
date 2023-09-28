@@ -43,7 +43,7 @@ export const Note = () => {
 					// Does not update other notes
 					return noteItem;
 				});
-				console.log(updatedNotes);
+				// console.log(updatedNotes);
 				return updatedNotes;
 			});
 		}
