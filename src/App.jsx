@@ -18,6 +18,7 @@ import bodyScrollToggle from "body-scroll-toggle";
 import "./App.css";
 
 import bodyscroll from "body-scroll-toggle";
+import { trashLoader } from "./pages/trash/trashLoader";
 
 function App() {
 	const { notes, setNotes, isModal, setIsModal, deletedNotes, setDeletedNotes } =
@@ -33,7 +34,11 @@ function App() {
 					element={<Favorite />}
 					loader={(e) => favoriteLoader(e, notes)}
 				></Route>
-				<Route path="trash" element={<Trash />}></Route>
+				<Route
+					path="trash"
+					element={<Trash />}
+					loader={(e) => trashLoader(e, deletedNotes)}
+				></Route>
 				<Route path="new" element={<NewNoteForm />}></Route>
 				<Route
 					path="note/:id"
@@ -57,10 +62,6 @@ function App() {
 		// Load notes from localStorage
 		const storedNotes = JSON.parse(localStorage.getItem("notes")) || [];
 		setNotes(storedNotes);
-
-		// Load deleted notes from localStorage
-		const trashNotes = JSON.parse(localStorage.getItem("trash")) || [];
-		setDeletedNotes(trashNotes);
 	}, []);
 
 	// Save notes to localStorage whenever 'notes' changes
@@ -77,31 +78,7 @@ function App() {
 				GET
 			</button>
 			{isModal && <div className="backdrop"></div>}
-			{isModal && (
-				<div className="delete-div">
-					<p>Move note to the Trash?</p>
-					<div className="button-container">
-						<button
-							className="cancel-button"
-							onClick={() => {
-								bodyScrollToggle.enable();
-								setIsModal(false);
-							}}
-						>
-							Cancel
-						</button>
-						<button
-							className="delete-button"
-							onClick={() => {
-								bodyScrollToggle.enable();
-								setIsModal(false);
-							}}
-						>
-							Move to Trash
-						</button>
-					</div>
-				</div>
-			)}
+
 			<RouterProvider router={router} />
 		</>
 	);
