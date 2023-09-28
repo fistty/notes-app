@@ -16,7 +16,7 @@ function Home() {
 			<div id="home" className="home-empty">
 				<h1>No note yet</h1>
 				<p className="para-empty">
-					Tap to <NewNoteButton /> make a note
+					Create <NewNoteButton />a note
 				</p>
 			</div>
 		);
