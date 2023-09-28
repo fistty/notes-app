@@ -50,7 +50,7 @@ function App() {
 	);
 
 	const clear = () => {
-		localStorage.removeItem("notes");
+		localStorage.clear();
 		console.log(localStorage);
 	};
 
