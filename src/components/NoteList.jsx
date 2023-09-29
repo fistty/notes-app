@@ -2,7 +2,7 @@ import React from "react";
 import { FiStar } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-function NoteList({ notes }) {
+function NoteList({ notes, path }) {
 	const dateFormat = (date) => {
 		const currentDate = new Date();
 		const inputDate = new Date(date);
@@ -42,7 +42,7 @@ function NoteList({ notes }) {
 				<Link
 					className="note-item"
 					key={item.id}
-					to={`/note/${item.id.toString()}`}
+					to={`/${path}/${item.id.toString()}`}
 				>
 					<p>{item.note}</p>
 					<h2>{handleNoTitle(item.title)}</h2>

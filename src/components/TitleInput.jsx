@@ -1,6 +1,6 @@
 import React from "react";
 
-function TitleInput({ title, setTitle, setSave }) {
+function TitleInput({ title, setTitle, setSave, disabled }) {
 	const handleChange = (e) => {
 		setTitle(e.target.value);
 		if (setSave) {
@@ -16,6 +16,7 @@ function TitleInput({ title, setTitle, setSave }) {
 				value={title}
 				onChange={handleChange}
 				name="title"
+				disabled={disabled}
 			/>
 		</>
 	);

@@ -24,7 +24,7 @@ function Home() {
 
 	return (
 		<div id="home" className="home">
-			<NoteList notes={notes} />
+			<NoteList notes={notes} path={"note"} />
 		</div>
 	);
 }

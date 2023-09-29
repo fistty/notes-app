@@ -72,7 +72,7 @@ export const Note = () => {
 
 	return (
 		<div className="new-note note">
-			<DeleteModal noteDetail={noteDetail} />
+			<DeleteModal noteDetail={noteDetail} text={"Move note to the Trash?"} />
 			<form>
 				<div className="title-input-div">
 					<button onClick={handleBackButton} className="back-button buttons">

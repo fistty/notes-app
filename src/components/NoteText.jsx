@@ -1,6 +1,6 @@
 import React from "react";
 
-function NoteText({ noteText, setNoteText, setSave }) {
+function NoteText({ noteText, setNoteText, setSave, disabled }) {
 	const handleChange = (e) => {
 		setNoteText(e.target.value);
 		if (setSave) {
@@ -14,6 +14,7 @@ function NoteText({ noteText, setNoteText, setSave }) {
 				value={noteText}
 				onChange={handleChange}
 				name="noteText"
+				disabled={disabled}
 			/>
 		</>
 	);
