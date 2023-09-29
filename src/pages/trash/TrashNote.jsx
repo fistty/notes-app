@@ -16,7 +16,7 @@ export const TrashNote = () => {
 	// Object returned from loader
 	const trashNoteDetail = useLoaderData();
 
-	const { setPath, setIsModal } = useNoteContext();
+	const { setNotes, setPath, setIsModal, setTrashNotes } = useNoteContext();
 
 	const navigate = useNavigate();
 
@@ -29,6 +29,22 @@ export const TrashNote = () => {
 		e.preventDefault();
 		setIsModal(true);
 		bodyScrollToggle.disable();
+	};
+
+	const handleRestore = (e) => {
+		e.preventDefault();
+		setNotes((prev) => {
+			return [trashNoteDetail, ...prev];
+		});
+
+		setTrashNotes((prev) => {
+			const updatedNotes = [...prev].filter(
+				(noteItem) => noteItem.id !== trashNoteDetail.id
+			);
+			return updatedNotes;
+		});
+
+		navigate(-1);
 	};
 
 	useEffect(() => {
@@ -53,7 +69,12 @@ export const TrashNote = () => {
 
 					<TitleInput title={title} setTitle={setTitle} disabled={true} />
 
-					<button className="restore-button trash-buttons buttons">Restore</button>
+					<button
+						onClick={handleRestore}
+						className="restore-button trash-buttons buttons"
+					>
+						Restore
+					</button>
 
 					<button
 						onClick={handleDelete}
