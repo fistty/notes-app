@@ -1,11 +1,13 @@
-.new-note {
+.new-note,
+.trash-note {
 	max-width: 500px;
 	margin: 0 auto;
 	position: relative;
 }
 
 @media screen and (min-width: 700px) {
-	.new-note {
+	.new-note,
+	.trash-note {
 		max-width: 80%;
 	}
 }
@@ -55,6 +57,17 @@ textarea {
 	padding-right: 0.5rem;
 }
 
+.title-input-div > .buttons {
+	color: white;
+	font-size: 1rem;
+	font-family: var(--font-open);
+	font-weight: 600;
+}
+
+.trash-note .title-input-div {
+	padding-right: 1rem;
+}
+
 .buttons {
 	background-color: #000;
 	display: flex;
@@ -67,7 +80,6 @@ textarea {
 	padding-block: 0.2rem;
 	transition: all 200ms ease;
 	aspect-ratio: 1 / 1;
-	/* height: 40px; */
 	width: max-content;
 }
 
@@ -120,4 +132,8 @@ textarea {
 
 .buttons:hover > .save-svg {
 	transform: scale(1.2);
+}
+
+.restore-button {
+	margin-right: 1rem;
 }
