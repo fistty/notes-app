@@ -3,9 +3,8 @@ import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import bodyScrollToggle from "body-scroll-toggle";
 import { useNavigate } from "react-router-dom";
 
-export const DeleteModal = ({ noteDetail }) => {
-	const { setNotes, isModal, setIsModal, setDeletedNotes, deletedNotes } =
-		useNoteContext();
+export const DeleteModal = ({ noteDetail, text }) => {
+	const { setNotes, isModal, setIsModal, setTrashNotes } = useNoteContext();
 
 	const navigate = useNavigate();
 
@@ -23,9 +22,8 @@ export const DeleteModal = ({ noteDetail }) => {
 
 	const handleConfirmDelete = () => {
 		// updates the deleted notes array
-		setDeletedNotes((prev) => {
+		setTrashNotes((prev) => {
 			const updatedNotes = [noteDetail, ...prev];
-			console.log(updatedNotes);
 			return updatedNotes;
 		});
 
@@ -44,7 +42,7 @@ export const DeleteModal = ({ noteDetail }) => {
 		<>
 			{isModal && (
 				<div className="delete-div">
-					<p>Move note to the Trash?</p>
+					<p>{text}</p>
 					<div className="button-container">
 						<button className="cancel-button" onClick={handleCancelButton}>
 							Cancel

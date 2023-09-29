@@ -14,14 +14,15 @@ import { useNoteContext } from "./contexts/noteContext/useNoteContext";
 import { Note } from "./pages/note/Note";
 import { noteLoader } from "./pages/note/noteLoader";
 import { favoriteLoader } from "./pages/favorite/favoriteLoader";
-import bodyScrollToggle from "body-scroll-toggle";
 import "./App.css";
 
 import bodyscroll from "body-scroll-toggle";
 import { trashLoader } from "./pages/trash/trashLoader";
+import { TrashNote } from "./pages/trash/TrashNote";
+import { trashNoteLoader } from "./pages/trash/trashNoteLoader";
 
 function App() {
-	const { notes, setNotes, isModal, setIsModal, deletedNotes, setDeletedNotes } =
+	const { notes, setNotes, isModal, setIsModal, trashNotes, setTrashNotes } =
 		useNoteContext();
 
 	// Create a router with routes
@@ -37,13 +38,18 @@ function App() {
 				<Route
 					path="trash"
 					element={<Trash />}
-					loader={(e) => trashLoader(e, deletedNotes)}
+					loader={(e) => trashLoader(e, trashNotes)}
 				></Route>
 				<Route path="new" element={<NewNoteForm />}></Route>
 				<Route
 					path="note/:id"
 					element={<Note />}
 					loader={(e) => noteLoader(e, notes)}
+				></Route>
+				<Route
+					path="trash/:id"
+					element={<TrashNote />}
+					loader={(e) => trashNoteLoader(e, trashNotes)}
 				></Route>
 			</Route>
 		)
@@ -55,7 +61,7 @@ function App() {
 	};
 
 	const get = () => {
-		console.log(localStorage);
+		console.log(localStorage.getItem("trash"));
 	};
 
 	useEffect(() => {
@@ -64,15 +70,15 @@ function App() {
 		setNotes(storedNotes);
 
 		// Load deleted notes from localStorage
-		const trashNotes = JSON.parse(localStorage.getItem("trash")) || [];
-		setDeletedNotes(trashNotes);
+		const deletedNotes = JSON.parse(localStorage.getItem("trash")) || [];
+		setTrashNotes(deletedNotes);
 	}, []);
 
 	// Save notes to localStorage whenever 'notes' changes
 	useEffect(() => {
 		localStorage.setItem("notes", JSON.stringify(notes));
-		localStorage.setItem("trash", JSON.stringify(deletedNotes));
-	}, [notes, deletedNotes]);
+		localStorage.setItem("trash", JSON.stringify(trashNotes));
+	}, [notes, trashNotes]);
 
 	return (
 		<>
