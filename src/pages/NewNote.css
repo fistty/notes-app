@@ -137,3 +137,16 @@ textarea {
 .restore-button {
 	margin-right: 1rem;
 }
+
+.title-input-div > .restore-button,
+.title-input-div .delete-button {
+	border-radius: 10px;
+	aspect-ratio: unset;
+	padding-inline: 0.8rem;
+	font-size: 1.1rem;
+}
+
+.restore-button:hover,
+.delete-button:hover {
+	background-color: #333;
+}
