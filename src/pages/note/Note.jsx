@@ -7,7 +7,6 @@ import NoteText from "../../components/NoteText";
 import { useNoteContext } from "../../contexts/noteContext/useNoteContext";
 import bodyScrollToggle from "body-scroll-toggle";
 import { DeleteModal } from "../../components/DeleteModal";
-import "./Note.css";
 
 export const Note = () => {
 	const [title, setTitle] = useState("");
