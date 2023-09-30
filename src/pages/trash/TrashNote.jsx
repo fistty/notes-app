@@ -33,15 +33,16 @@ export const TrashNote = () => {
 
 	const handleRestore = (e) => {
 		e.preventDefault();
-		setNotes((prev) => {
-			return [trashNoteDetail, ...prev];
-		});
+
 
 		setTrashNotes((prev) => {
 			const updatedNotes = [...prev].filter(
 				(noteItem) => noteItem.id !== trashNoteDetail.id
 			);
 			return updatedNotes;
+		});
+				setNotes((prev) => {
+			return [trashNoteDetail, ...prev];
 		});
 
 		navigate(-1);
