@@ -3,7 +3,12 @@ import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import bodyScrollToggle from "body-scroll-toggle";
 import { useNavigate } from "react-router-dom";
 
-export const DeleteModal = ({ noteDetail, text }) => {
+export const DeleteModal = ({
+	noteDetail,
+	text,
+	deleteButtonText,
+	permanentDelete,
+}) => {
 	const { setNotes, isModal, setIsModal, setTrashNotes } = useNoteContext();
 
 	const navigate = useNavigate();
@@ -21,6 +26,8 @@ export const DeleteModal = ({ noteDetail, text }) => {
 	};
 
 	const handleConfirmDelete = () => {
+		console.log(2);
+
 		// updates the deleted notes array
 		setTrashNotes((prev) => {
 			const updatedNotes = [noteDetail, ...prev];
@@ -38,6 +45,20 @@ export const DeleteModal = ({ noteDetail, text }) => {
 		navigate(-1);
 	};
 
+	const handlePermanentDelete = () => {
+		console.log(222);
+		setTrashNotes((prev) => {
+			console.log(prev);
+			const updatedNotes = [...prev].filter(
+				(noteItem) => noteItem.id !== noteDetail
+			);
+			console.log(updatedNotes);
+			return updatedNotes;
+		});
+		setIsModal(false);
+		navigate(-1);
+	};
+
 	return (
 		<>
 			{isModal && (
@@ -47,8 +68,11 @@ export const DeleteModal = ({ noteDetail, text }) => {
 						<button className="cancel-button" onClick={handleCancelButton}>
 							Cancel
 						</button>
-						<button className="delete-button" onClick={handleConfirmDelete}>
-							Move to Trash
+						<button
+							className="delete-button"
+							onClick={permanentDelete ? handlePermanentDelete : handleConfirmDelete}
+						>
+							{deleteButtonText}
 						</button>
 					</div>
 				</div>
