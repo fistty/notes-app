@@ -34,14 +34,13 @@ export const TrashNote = () => {
 	const handleRestore = (e) => {
 		e.preventDefault();
 
-
 		setTrashNotes((prev) => {
 			const updatedNotes = [...prev].filter(
 				(noteItem) => noteItem.id !== trashNoteDetail.id
 			);
 			return updatedNotes;
 		});
-				setNotes((prev) => {
+		setNotes((prev) => {
 			return [trashNoteDetail, ...prev];
 		});
 
@@ -49,7 +48,7 @@ export const TrashNote = () => {
 	};
 
 	useEffect(() => {
-		setPath("Edit Note");
+		setPath("Trash");
 		window.scrollTo({ top: 0, behavior: "smooth" });
 		setNoteText(trashNoteDetail.note);
 		setTitle(trashNoteDetail.title);
@@ -60,7 +59,9 @@ export const TrashNote = () => {
 		<div className="trash-note note">
 			<DeleteModal
 				noteDetail={trashNoteDetail}
-				text={"Permanently Delete this Note?"}
+				text={"Permanently delete this Note?"}
+				deleteButtonText={"Delete Note"}
+				permanentDelete={true}
 			/>
 			<form>
 				<div className="title-input-div">
