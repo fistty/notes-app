@@ -1,5 +1,3 @@
-import React from "react";
-
 function NoteText({ noteText, setNoteText, setSave, disabled }) {
 	const handleChange = (e) => {
 		setNoteText(e.target.value);

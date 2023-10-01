@@ -14,15 +14,13 @@ import { useNoteContext } from "./contexts/noteContext/useNoteContext";
 import { Note } from "./pages/note/Note";
 import { noteLoader } from "./pages/note/noteLoader";
 import { favoriteLoader } from "./pages/favorite/favoriteLoader";
-import "./App.css";
-
-import bodyscroll from "body-scroll-toggle";
 import { trashLoader } from "./pages/trash/trashLoader";
 import { TrashNote } from "./pages/trash/TrashNote";
 import { trashNoteLoader } from "./pages/trash/trashNoteLoader";
+import "./App.css";
 
 function App() {
-	const { notes, setNotes, isModal, setIsModal, trashNotes, setTrashNotes } =
+	const { notes, setNotes, isModal, trashNotes, setTrashNotes } =
 		useNoteContext();
 
 	// Create a router with routes

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { FiStar, FiTrash } from "react-icons/fi";
@@ -49,7 +49,7 @@ function NewNoteForm() {
 
 	useEffect(() => {
 		setPath("New Note");
-	}, []);
+	}, [setPath]);
 
 	return (
 		<div className="new-note">

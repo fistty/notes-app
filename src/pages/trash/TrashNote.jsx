@@ -57,7 +57,7 @@ export const TrashNote = () => {
 		setNoteText(trashNoteDetail.note);
 		setTitle(trashNoteDetail.title);
 		setIsFavorite(trashNoteDetail.favorite);
-	}, [trashNoteDetail]);
+	}, [setPath, trashNoteDetail]);
 
 	return (
 		<div className="trash-note note">

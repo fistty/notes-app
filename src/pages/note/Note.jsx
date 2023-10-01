@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { FiStar, FiTrash } from "react-icons/fi";

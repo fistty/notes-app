@@ -1,4 +1,3 @@
-import React from "react";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import bodyScrollToggle from "body-scroll-toggle";
 import { useNavigate } from "react-router-dom";

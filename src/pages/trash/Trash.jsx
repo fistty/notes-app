@@ -9,7 +9,7 @@ function Trash() {
 
 	useEffect(() => {
 		setPath("Trash");
-	}, []);
+	}, [setPath]);
 
 	if (trashNotes.length < 1) {
 		return (

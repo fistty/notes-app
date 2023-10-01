@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { PiNotePencilDuotone } from "react-icons/pi";
 import NoteList from "../components/NoteList";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
@@ -9,7 +9,7 @@ function Home() {
 	const { notes, setPath } = useNoteContext();
 	useEffect(() => {
 		setPath("All Notes");
-	}, []);
+	}, [setPath]);
 
 	if (notes.length < 1) {
 		return (

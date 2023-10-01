@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NoteContext } from "./NoteContext";
 
 export const NoteContextProvider = ({ children }) => {
