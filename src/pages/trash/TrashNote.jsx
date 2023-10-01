@@ -27,8 +27,8 @@ export const TrashNote = () => {
 
 	const handleDelete = (e) => {
 		e.preventDefault();
-		setIsModal(true);
 		bodyScrollToggle.disable();
+		setIsModal(true);
 	};
 
 	const handleRestore = (e) => {
@@ -41,6 +41,8 @@ export const TrashNote = () => {
 			return updatedNotes;
 		});
 		setNotes((prev) => {
+			const arr = [trashNoteDetail, ...prev];
+			arr.forEach((item) => console.log(item.createdAt));
 			return [trashNoteDetail, ...prev];
 		});
 

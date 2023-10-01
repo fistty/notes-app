@@ -20,7 +20,7 @@ function Favorite() {
 
 	return (
 		<div id="favorite" className="favorite grid">
-			<NoteList notes={favoriteNotes} />
+			<NoteList notes={favoriteNotes} path={"note"} />
 		</div>
 	);
 }

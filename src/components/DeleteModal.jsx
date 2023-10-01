@@ -16,7 +16,7 @@ export const DeleteModal = ({
 	const handleCancelButton = () => {
 		bodyScrollToggle.enable();
 		setIsModal(false);
-		// To remove the bodyScrollToggle in case it didn't work
+		// To remove the bodyScrollToggle in case "bodyScrollToggle.enable()" doesn't work
 		const body = document.querySelector("body");
 		body.style.overflow = "";
 		body.style.position = "";
@@ -41,7 +41,15 @@ export const DeleteModal = ({
 			);
 			return updatedNotes;
 		});
+		bodyScrollToggle.enable();
 		setIsModal(false);
+		// To remove the bodyScrollToggle in case "bodyScrollToggle.enable()" doesn't work
+		const body = document.querySelector("body");
+		body.style.overflow = "";
+		body.style.position = "";
+		body.style.height = "";
+		body.style.width = "";
+		body.style.top = "";
 		navigate(-1);
 	};
 
