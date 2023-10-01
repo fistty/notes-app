@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { useNoteContext } from "../../contexts/noteContext/useNoteContext";
 import { useLoaderData } from "react-router-dom";
 import NoteList from "../../components/NoteList";
@@ -8,7 +8,7 @@ function Favorite() {
 	const favoriteNotes = useLoaderData();
 	useEffect(() => {
 		setPath("Favorites");
-	}, []);
+	}, [setPath]);
 
 	if (favoriteNotes.length < 1) {
 		return (

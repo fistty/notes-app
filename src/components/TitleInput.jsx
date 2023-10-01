@@ -1,5 +1,3 @@
-import React from "react";
-
 function TitleInput({ title, setTitle, setSave, disabled }) {
 	const handleChange = (e) => {
 		setTitle(e.target.value);

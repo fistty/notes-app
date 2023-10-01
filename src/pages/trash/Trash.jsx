@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { useNoteContext } from "../../contexts/noteContext/useNoteContext";
 import { useLoaderData } from "react-router-dom";
 import NoteList from "../../components/NoteList";
