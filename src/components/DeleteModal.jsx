@@ -26,8 +26,6 @@ export const DeleteModal = ({
 	};
 
 	const handleConfirmDelete = () => {
-		console.log(2);
-
 		// updates the deleted notes array
 		setTrashNotes((prev) => {
 			const updatedNotes = [noteDetail, ...prev];
@@ -54,13 +52,10 @@ export const DeleteModal = ({
 	};
 
 	const handlePermanentDelete = () => {
-		console.log(222);
 		setTrashNotes((prev) => {
-			console.log(prev);
 			const updatedNotes = [...prev].filter(
 				(noteItem) => noteItem.id !== noteDetail
 			);
-			console.log(updatedNotes);
 			return updatedNotes;
 		});
 		setIsModal(false);
