@@ -41,9 +41,11 @@ export const TrashNote = () => {
 			return updatedNotes;
 		});
 		setNotes((prev) => {
-			const arr = [trashNoteDetail, ...prev];
-			arr.forEach((item) => console.log(item.createdAt));
-			return [trashNoteDetail, ...prev];
+			let updatedNote = [trashNoteDetail, ...prev];
+			console.log(updatedNote);
+			// Sorts the arr from newest to oldest
+			let sortedNote = updatedNote.sort((a, b) => b.createdAt - a.createdAt);
+			return sortedNote;
 		});
 
 		navigate(-1);
