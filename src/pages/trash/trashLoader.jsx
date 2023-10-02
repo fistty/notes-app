@@ -1,3 +1,3 @@
-export const trashLoader = ({ params }, deletedNotes) => {
+export const trashLoader = (deletedNotes) => {
 	return deletedNotes;
 };

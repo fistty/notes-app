@@ -66,7 +66,7 @@ export const Note = () => {
 		setNoteText(noteDetail.note);
 		setTitle(noteDetail.title);
 		setIsFavorite(noteDetail.favorite);
-	}, [noteDetail]);
+	}, [setPath, noteDetail]);
 
 	return (
 		<div className="new-note note">

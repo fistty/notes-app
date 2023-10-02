@@ -31,12 +31,12 @@ function App() {
 				<Route
 					path="favorite"
 					element={<Favorite />}
-					loader={(e) => favoriteLoader(e, notes)}
+					loader={() => favoriteLoader(notes)}
 				></Route>
 				<Route
 					path="trash"
 					element={<Trash />}
-					loader={(e) => trashLoader(e, trashNotes)}
+					loader={() => trashLoader(trashNotes)}
 				></Route>
 				<Route path="new" element={<NewNoteForm />}></Route>
 				<Route
