@@ -58,8 +58,8 @@ main {
 }
 
 .note-item {
-	height: 260px;
-	max-height: 260px;
+	height: 280px;
+	max-height: 280px;
 	overflow: hidden;
 	border-radius: 8px;
 	text-decoration: none;
@@ -72,7 +72,7 @@ main {
 }
 
 .note-item p {
-	border-radius: 12px;
+	border-radius: 8px;
 	font-size: 0.9375rem;
 	height: 80%;
 	text-overflow: ellipsis;
@@ -80,12 +80,16 @@ main {
 	padding: 0.5rem;
 	padding-inline: 1rem;
 	background-color: #333;
-
 	display: -webkit-box;
 	-webkit-line-clamp: 7;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	white-space: pre-wrap;
+	transition: all 300ms ease;
+}
+
+.note-item:hover p {
+	background-color: #444;
 }
 
 .note-item h2 {
@@ -105,6 +109,7 @@ main {
 	overflow: hidden;
 	color: #949494;
 	margin-top: 0.1rem;
+	margin-bottom: 0.5rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
