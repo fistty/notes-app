@@ -11,7 +11,6 @@ import { DeleteModal } from "../../components/DeleteModal";
 export const TrashNote = () => {
 	const [title, setTitle] = useState("");
 	const [noteText, setNoteText] = useState("");
-	const [isFavorite, setIsFavorite] = useState(false);
 
 	// Object returned from loader
 	const trashNoteDetail = useLoaderData();
@@ -42,8 +41,7 @@ export const TrashNote = () => {
 		});
 		setNotes((prev) => {
 			let updatedNote = [trashNoteDetail, ...prev];
-			console.log(updatedNote);
-			// Sorts the arr from newest to oldest
+			// Sorts the note array from newest to oldest
 			let sortedNote = updatedNote.sort((a, b) => b.createdAt - a.createdAt);
 			return sortedNote;
 		});
@@ -56,7 +54,6 @@ export const TrashNote = () => {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 		setNoteText(trashNoteDetail.note);
 		setTitle(trashNoteDetail.title);
-		setIsFavorite(trashNoteDetail.favorite);
 	}, [setPath, trashNoteDetail]);
 
 	return (
