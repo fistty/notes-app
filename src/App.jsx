@@ -63,13 +63,17 @@ function App() {
 	};
 
 	useEffect(() => {
-		// Load notes from localStorage
-		const storedNotes = JSON.parse(localStorage.getItem("notes")) || [];
-		setNotes(storedNotes);
+		const loadNotes = () => {
+			// Load notes from localStorage
+			const storedNotes = JSON.parse(localStorage.getItem("notes")) || [];
+			setNotes(storedNotes);
 
-		// Load deleted notes from localStorage
-		const deletedNotes = JSON.parse(localStorage.getItem("trash")) || [];
-		setTrashNotes(deletedNotes);
+			// Load deleted notes from localStorage
+			const deletedNotes = JSON.parse(localStorage.getItem("trash")) || [];
+			setTrashNotes(deletedNotes);
+		};
+
+		loadNotes();
 	}, []);
 
 	// Save notes to localStorage whenever 'notes' changes
