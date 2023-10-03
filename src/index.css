@@ -25,9 +25,18 @@
 	--font-roboto: "Roboto", sans-serif;
 }
 
+html {
+	overflow-x: hidden;
+}
+
 body {
 	color: var(--color-main);
 	background-color: #111111;
 	min-height: 100vh;
 	margin: 0 auto;
+	overflow-x: hidden;
+}
+
+button {
+	cursor: pointer;
 }

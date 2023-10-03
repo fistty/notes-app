@@ -1,9 +1,13 @@
 import { NavLink } from "react-router-dom";
 import { NewNoteButton } from "./NewNoteButton";
 
+import "./Nav.css";
+import { NavMobile } from "./NavMobile";
+
 function Nav() {
 	return (
 		<nav className="nav">
+			<NavMobile />
 			<ul className="nav-ul">
 				<li className="nav-list nav-list-new">
 					<NewNoteButton />

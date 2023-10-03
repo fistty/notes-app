@@ -11,6 +11,7 @@ h1 {
 .nav {
 	background-color: #000;
 	border-bottom: 2px solid #333;
+	height: 2.6875rem;
 }
 
 .nav-ul {
@@ -19,7 +20,7 @@ h1 {
 	gap: 1rem;
 	justify-content: flex-end;
 	align-items: center;
-	max-width: 1460px;
+	max-width: 91.25rem;
 	margin: 0 auto;
 }
 
@@ -120,8 +121,67 @@ h1 {
 	color: var(--color-main);
 }
 
-@media screen and (max-width: 520px) {
+.nav-ul-mobile {
+	display: none;
+}
+
+.nav-mobile-li {
+	display: flex;
+}
+
+.nav-mobile-bars {
+	margin-left: 1rem;
+}
+
+.nav-mobile-bars button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	aspect-ratio: 1/1;
+	height: 2.5rem;
+	transition: all 200ms ease;
+}
+
+.nav-mobile-bars button:hover {
+	background-color: #333;
+}
+
+.nav-mobile-new {
+	margin-left: auto;
+	margin-right: 1rem;
+}
+
+@media screen and (max-width: 540px) {
+	.nav-ul-mobile {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
 	.nav {
-		background-color: burlywood;
+		position: relative;
+	}
+
+	.nav-ul {
+		background-color: #333;
+		position: absolute;
+		top: 0%;
+		right: 100%;
+		height: 300px;
+		width: 100%;
+		flex-direction: column;
+		justify-content: unset;
+		transition: all 300ms ease;
+	}
+
+	.nav-ul.active {
+		right: 0%;
+	}
+
+	.nav-list-new {
+		display: none;
 	}
 }
