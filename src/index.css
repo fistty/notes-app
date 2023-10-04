@@ -34,7 +34,11 @@ body {
 	background-color: #111111;
 	min-height: 100vh;
 	margin: 0 auto;
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
+}
+
+#root {
+	position: relative;
 }
 
 button {
