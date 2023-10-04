@@ -1,10 +1,25 @@
 import { NavLink } from "react-router-dom";
 import { NewNoteButton } from "./NewNoteButton";
-
-import "./Nav.css";
 import { NavMobile } from "./NavMobile";
+import { useEffect } from "react";
+import { useNoteContext } from "../contexts/noteContext/useNoteContext";
+import { removeBodyScroll } from "../helpers/removeBodyScroll";
+import "./Nav.css";
 
 function Nav() {
+	const { setIsModal } = useNoteContext();
+
+	useEffect(() => {
+		const navList = document.querySelectorAll(".nav-list");
+
+		navList.forEach((item) =>
+			item.addEventListener("click", () => {
+				setIsModal(false);
+				removeBodyScroll();
+			})
+		);
+	}, []);
+
 	return (
 		<nav className="nav">
 			<NavMobile />
