@@ -9,10 +9,6 @@
 	left: 50px;
 }
 
-#root {
-	position: relative;
-}
-
 .backdrop {
 	position: absolute;
 	height: 100%;
