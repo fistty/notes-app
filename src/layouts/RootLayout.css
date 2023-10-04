@@ -12,6 +12,8 @@ h1 {
 	background-color: #000;
 	border-bottom: 2px solid #333;
 	height: 2.6875rem;
+	position: sticky;
+	top: 0%;
 }
 
 .nav-ul {
@@ -52,7 +54,7 @@ h1 {
 	content: "";
 	position: absolute;
 	opacity: 0;
-	bottom: -7px;
+	bottom: -8px;
 	left: 50%;
 	transform: translateX(-50%);
 	width: 135%;
@@ -162,7 +164,7 @@ h1 {
 	}
 
 	.nav {
-		position: relative;
+		position: sticky;
 	}
 
 	.nav-ul {
@@ -174,6 +176,7 @@ h1 {
 		width: 100%;
 		flex-direction: column;
 		justify-content: unset;
+		z-index: 999;
 		transition: all 300ms ease;
 	}
 
