@@ -17,10 +17,11 @@ import { favoriteLoader } from "./pages/favorite/favoriteLoader";
 import { trashLoader } from "./pages/trash/trashLoader";
 import { TrashNote } from "./pages/trash/TrashNote";
 import { trashNoteLoader } from "./pages/trash/trashNoteLoader";
+import { Backdrop } from "./components/Backdrop";
 import "./App.css";
 
 function App() {
-	const { notes, setNotes, isModal, trashNotes, setTrashNotes } =
+	const { notes, setNotes, isModal, setIsModal, trashNotes, setTrashNotes } =
 		useNoteContext();
 
 	// Create a router with routes
@@ -90,7 +91,7 @@ function App() {
 			<button className="get" onClick={get}>
 				GET
 			</button>
-			{isModal && <div className="backdrop"></div>}
+			{isModal && <Backdrop />}
 
 			<RouterProvider router={router} />
 		</>
