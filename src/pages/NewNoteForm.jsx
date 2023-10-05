@@ -5,7 +5,7 @@ import { FiStar, FiTrash } from "react-icons/fi";
 import "./NewNote.css";
 import TitleInput from "../components/TitleInput";
 import NoteText from "../components/NoteText";
-import { generateUniqueId } from "../helpers/generateRandomId";
+import { generateUniqueId } from "../utils/helpers/generateRandomId";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 
 function NewNoteForm() {

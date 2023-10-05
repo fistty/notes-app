@@ -3,7 +3,7 @@ import { NewNoteButton } from "./NewNoteButton";
 import { NavMobile } from "./NavMobile";
 import { useEffect } from "react";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
-import { removeBodyScroll } from "../helpers/removeBodyScroll";
+import { removeBodyScroll } from "../utils/helpers/bodyScrollToggle";
 import "./Nav.css";
 
 function Nav() {
