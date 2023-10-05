@@ -165,6 +165,7 @@ h1 {
 
 	.nav {
 		position: sticky;
+		z-index: 999;
 	}
 
 	.nav-ul {

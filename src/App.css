@@ -13,7 +13,7 @@
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	backdrop-filter: blur(0.1rem);
+	backdrop-filter: blur(1px);
 	transition: all 200ms ease;
 	z-index: 9;
 }
