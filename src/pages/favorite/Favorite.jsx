@@ -8,6 +8,7 @@ function Favorite() {
 	const favoriteNotes = useLoaderData();
 	useEffect(() => {
 		setPath("Favorites");
+		window.scrollTo({ top: 0, behavior: "smooth" });
 	}, [setPath]);
 
 	if (favoriteNotes.length < 1) {

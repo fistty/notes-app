@@ -9,6 +9,7 @@ function Home() {
 	const { notes, setPath } = useNoteContext();
 	useEffect(() => {
 		setPath("All Notes");
+		window.scrollTo({ top: 0, behavior: "smooth" });
 	}, [setPath]);
 
 	if (notes.length < 1) {
