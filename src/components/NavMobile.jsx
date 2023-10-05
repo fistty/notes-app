@@ -12,6 +12,10 @@ export const NavMobile = () => {
 		nav.classList.add("active");
 		setIsModal(true);
 		bodyScrollToggle.disable();
+		// Allows for the hamburger menu to work when not on top
+		const body = document.querySelector("body");
+		body.style.height = "";
+		body.style.overflow = "";
 	};
 	return (
 		<ul className="nav-ul-mobile">
