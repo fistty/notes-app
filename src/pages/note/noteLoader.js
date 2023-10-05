@@ -1,6 +1,8 @@
 export const noteLoader = ({ params }, notes) => {
 	const navUl = document.querySelector(".nav-ul");
-	navUl.classList.remove("active");
+	if (navUl) {
+		navUl.classList.remove("active");
+	}
 
 	const { id } = params;
 	const noteDetail = notes.find((noteItem) => noteItem.id === id);
