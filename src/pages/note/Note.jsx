@@ -68,6 +68,15 @@ export const Note = () => {
 		setIsFavorite(noteDetail.favorite);
 	}, [setPath, noteDetail]);
 
+	useEffect(() => {
+		const nav = document.querySelector(".nav");
+
+		nav.style.position = "unset";
+		return () => {
+			nav.style.position = "";
+		};
+	}, []);
+
 	return (
 		<div className="new-note note">
 			<DeleteModal
