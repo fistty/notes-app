@@ -48,6 +48,7 @@ h1 {
 	border: 2px solid transparent;
 	border-radius: 5px;
 	position: relative;
+	transition: all 200ms ease;
 }
 
 .nav-list .nav-a:after {
@@ -169,23 +170,56 @@ h1 {
 	}
 
 	.nav-ul {
-		background-color: #333;
+		background-color: #222;
 		position: absolute;
-		top: 0%;
 		right: 100%;
-		height: 300px;
+		height: 100vh;
 		width: 100%;
 		flex-direction: column;
 		justify-content: unset;
+		padding-top: 4rem;
+		padding-left: 20%;
 		z-index: 999;
-		transition: all 200ms ease;
+		transition: right 100ms ease, top 1ms ease;
 	}
 
 	.nav-ul.active {
-		right: 0%;
+		right: 20%;
 	}
 
 	.nav-list-new {
+		display: none;
+	}
+
+	.nav-list {
+		width: 100%;
+		padding-inline: unset;
+		align-items: center;
+	}
+
+	.nav-list:not(.nav-list-new):hover {
+		background-color: #666;
+	}
+
+	.nav-list:last-of-type {
+		margin-right: unset;
+	}
+
+	.nav-list .nav-a {
+		width: 100%;
+		padding-left: 1rem;
+	}
+
+	.nav-list .nav-a.active {
+		background-color: #666;
+		font-size: 1.4rem;
+	}
+
+	.nav-list .nav-a.active:after {
+		display: none;
+	}
+
+	.nav-list .nav-a:hover::after {
 		display: none;
 	}
 }
