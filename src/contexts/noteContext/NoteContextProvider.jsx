@@ -6,6 +6,7 @@ export const NoteContextProvider = ({ children }) => {
 	const [trashNotes, setTrashNotes] = useState([]);
 	const [path, setPath] = useState("");
 	const [isModal, setIsModal] = useState(false);
+	const [isBackdrop, setIsBackdrop] = useState(false);
 	return (
 		<NoteContext.Provider
 			value={{
@@ -17,6 +18,8 @@ export const NoteContextProvider = ({ children }) => {
 				setPath,
 				isModal,
 				setIsModal,
+				isBackdrop,
+				setIsBackdrop,
 			}}
 		>
 			{children}
