@@ -180,10 +180,13 @@ h1 {
 		padding-top: 4rem;
 		padding-left: 20%;
 		z-index: 999;
-		transition: right 100ms ease, top 1ms ease;
+		transition: right 300ms ease, top 1ms ease;
 	}
 
 	.nav-ul.active {
+		right: 20%;
+	}
+	.nav-ul.act {
 		right: 20%;
 	}
 
