@@ -7,14 +7,14 @@ import { removeBodyScroll } from "../utils/helpers/bodyScrollToggle";
 import "./Nav.css";
 
 function Nav() {
-	const { setIsModal } = useNoteContext();
+	const { setIsBackdrop } = useNoteContext();
 
 	useEffect(() => {
 		const navList = document.querySelectorAll(".nav-list");
 
 		navList.forEach((item) =>
 			item.addEventListener("click", () => {
-				setIsModal(false);
+				setIsBackdrop(false);
 				removeBodyScroll();
 			})
 		);

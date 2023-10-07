@@ -21,7 +21,7 @@ import { Backdrop } from "./components/Backdrop";
 import "./App.css";
 
 function App() {
-	const { notes, setNotes, isModal, setIsModal, trashNotes, setTrashNotes } =
+	const { notes, setNotes, trashNotes, setTrashNotes, isBackdrop, isModal } =
 		useNoteContext();
 
 	// Create a router with routes
@@ -91,7 +91,7 @@ function App() {
 			<button className="get" onClick={get}>
 				GET
 			</button>
-			{isModal && <Backdrop />}
+			{(isModal || isBackdrop) && <Backdrop />}
 
 			<RouterProvider router={router} />
 		</>

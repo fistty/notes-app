@@ -3,9 +3,10 @@ import { FaBars } from "react-icons/fa6";
 import { NewNoteButton } from "./NewNoteButton";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import bodyScrollToggle from "body-scroll-toggle";
+import { removeBodyScroll } from "../utils/helpers/bodyScrollToggle";
 
 export const NavMobile = () => {
-	const { setIsModal } = useNoteContext();
+	const { setIsBackdrop } = useNoteContext();
 
 	const handleClick = () => {
 		// To get the side menu to stay on top of the screen
@@ -17,10 +18,11 @@ export const NavMobile = () => {
 		let offset = nav.offsetTop - window.scrollY;
 		navUl.style.top = `-${offset}px`;
 		navUl.classList.add("active");
-		setIsModal(true);
+		navUl.classList.add("act");
+		setIsBackdrop(true);
 		bodyScrollToggle.disable();
-		// Allows for the hamburger menu to work when not on top
 
+		// Allows for the hamburger menu to work when not on top
 		const body = document.querySelector("body");
 		body.style.height = "";
 		body.style.overflow = "";
