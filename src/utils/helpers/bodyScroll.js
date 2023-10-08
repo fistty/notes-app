@@ -1,6 +1,6 @@
 import bodyScrollToggle from "body-scroll-toggle";
 
-export const removeBodyScroll = () => {
+export const disableBodyScroll = () => {
 	const navUl = document.querySelector(".nav-ul");
 	navUl.classList.remove("active");
 	navUl.classList.remove("act");

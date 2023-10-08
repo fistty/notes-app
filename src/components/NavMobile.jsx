@@ -3,7 +3,6 @@ import { FaBars } from "react-icons/fa6";
 import { NewNoteButton } from "./NewNoteButton";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import bodyScrollToggle from "body-scroll-toggle";
-import { removeBodyScroll } from "../utils/helpers/bodyScrollToggle";
 
 export const NavMobile = () => {
 	const { setIsBackdrop } = useNoteContext();
