@@ -70,7 +70,7 @@ export const Note = () => {
 
 	useEffect(() => {
 		const nav = document.querySelector(".nav");
-		nav.style.position = "unset";
+		nav.style.position = "relative";
 		return () => {
 			nav.style.position = "";
 		};
