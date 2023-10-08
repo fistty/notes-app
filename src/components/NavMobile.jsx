@@ -3,6 +3,7 @@ import { FaBars } from "react-icons/fa6";
 import { NewNoteButton } from "./NewNoteButton";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import bodyScrollToggle from "body-scroll-toggle";
+import { disableBodyScroll } from "../utils/helpers/bodyScroll";
 
 export const NavMobile = () => {
 	const { setIsBackdrop } = useNoteContext();
@@ -19,12 +20,7 @@ export const NavMobile = () => {
 		navUl.classList.add("active");
 		navUl.classList.add("act");
 		setIsBackdrop(true);
-		bodyScrollToggle.disable();
-
-		// Allows for the hamburger menu to work when not on top
-		const body = document.querySelector("body");
-		body.style.height = "";
-		body.style.overflow = "";
+		disableBodyScroll();
 	};
 	return (
 		<ul className="nav-ul-mobile">

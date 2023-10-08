@@ -1,6 +1,6 @@
 import bodyScrollToggle from "body-scroll-toggle";
 
-export const disableBodyScroll = () => {
+export const enableBodyScroll = () => {
 	const navUl = document.querySelector(".nav-ul");
 	navUl.classList.remove("active");
 	navUl.classList.remove("act");
@@ -12,4 +12,13 @@ export const disableBodyScroll = () => {
 	body.style.height = "";
 	body.style.width = "";
 	body.style.top = "";
+};
+
+export const disableBodyScroll = () => {
+	bodyScrollToggle.disable();
+
+	// Allows for the hamburger menu to work when not on top
+	const body = document.querySelector("body");
+	body.style.height = "";
+	body.style.overflow = "";
 };

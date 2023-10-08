@@ -7,6 +7,7 @@ import NoteText from "../../components/NoteText";
 import { useNoteContext } from "../../contexts/noteContext/useNoteContext";
 import bodyScrollToggle from "body-scroll-toggle";
 import { DeleteModal } from "../../components/DeleteModal";
+import { disableBodyScroll } from "../../utils/helpers/bodyScroll";
 
 export const Note = () => {
 	const [title, setTitle] = useState("");
@@ -57,7 +58,8 @@ export const Note = () => {
 	const handleDelete = (e) => {
 		e.preventDefault();
 		setIsModal(true);
-		bodyScrollToggle.disable();
+		// bodyScrollToggle.disable();
+		disableBodyScroll();
 	};
 
 	useEffect(() => {

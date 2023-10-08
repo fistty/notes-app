@@ -1,6 +1,7 @@
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import bodyScrollToggle from "body-scroll-toggle";
 import { useNavigate } from "react-router-dom";
+import { enableBodyScroll } from "../utils/helpers/bodyScroll";
 
 export const DeleteModal = ({
 	noteDetail,
@@ -13,7 +14,7 @@ export const DeleteModal = ({
 	const navigate = useNavigate();
 
 	const handleCancelButton = () => {
-		bodyScrollToggle.enable();
+		enableBodyScroll();
 		setIsModal(false);
 		// To remove the bodyScrollToggle in case "bodyScrollToggle.enable()" doesn't work
 		const body = document.querySelector("body");

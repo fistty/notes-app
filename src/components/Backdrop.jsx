@@ -1,7 +1,7 @@
 import React from "react";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import bodyScrollToggle from "body-scroll-toggle";
-import { disableBodyScroll } from "../utils/helpers/bodyScroll";
+import { enableBodyScroll } from "../utils/helpers/bodyScroll";
 
 export const Backdrop = () => {
 	const { setIsBackdrop, setIsModal } = useNoteContext();
@@ -11,7 +11,7 @@ export const Backdrop = () => {
 		navUl.classList.remove("act");
 
 		bodyScrollToggle.enable();
-		disableBodyScroll();
+		enableBodyScroll();
 		// To remove the bodyScrollToggle in case "bodyScrollToggle.enable()" doesn't work
 		const body = document.querySelector("body");
 		body.style.overflow = "";

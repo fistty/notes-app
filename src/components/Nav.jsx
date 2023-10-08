@@ -3,7 +3,7 @@ import { NewNoteButton } from "./NewNoteButton";
 import { NavMobile } from "./NavMobile";
 import { useEffect } from "react";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
-import { disableBodyScroll } from "../utils/helpers/bodyScroll";
+import { enableBodyScroll } from "../utils/helpers/bodyScroll";
 import "./Nav.css";
 
 function Nav() {
@@ -15,7 +15,7 @@ function Nav() {
 		navList.forEach((item) =>
 			item.addEventListener("click", () => {
 				setIsBackdrop(false);
-				disableBodyScroll();
+				enableBodyScroll();
 			})
 		);
 	}, []);
