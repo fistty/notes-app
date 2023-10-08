@@ -16,6 +16,7 @@
 	backdrop-filter: blur(1px);
 	transition: all 200ms ease;
 	z-index: 10;
+	cursor: grab;
 }
 
 .delete-div {
