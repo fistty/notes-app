@@ -1,8 +1,8 @@
 main {
 	max-width: 1460px;
 	margin: 0 auto;
-	margin-bottom: 3rem;
 	min-height: 100vh;
+	margin-bottom: 3rem;
 }
 
 .home-empty h1 {
