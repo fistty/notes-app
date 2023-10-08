@@ -180,8 +180,8 @@ h1 {
 		padding-top: 4rem;
 		padding-left: 20%;
 		z-index: 999;
-		transition: right 300ms ease, top 1ms ease;
 		border-top-right-radius: 20px;
+		transition: right 300ms ease, top 1ms ease;
 	}
 
 	.nav-ul.active {
