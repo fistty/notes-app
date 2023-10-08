@@ -1,5 +1,4 @@
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
-import bodyScrollToggle from "body-scroll-toggle";
 import { useNavigate } from "react-router-dom";
 import { enableBodyScroll } from "../utils/helpers/bodyScroll";
 
@@ -9,7 +8,8 @@ export const DeleteModal = ({
 	deleteButtonText,
 	permanentDelete,
 }) => {
-	const { setNotes, isModal, setIsModal, setTrashNotes } = useNoteContext();
+	const { setNotes, isModal, setIsModal, trashNotes, setTrashNotes } =
+		useNoteContext();
 
 	const navigate = useNavigate();
 
@@ -39,7 +39,7 @@ export const DeleteModal = ({
 			);
 			return updatedNotes;
 		});
-		bodyScrollToggle.enable();
+		enableBodyScroll();
 		setIsModal(false);
 		// To remove the bodyScrollToggle in case "bodyScrollToggle.enable()" doesn't work
 		const body = document.querySelector("body");
@@ -54,11 +54,12 @@ export const DeleteModal = ({
 	const handlePermanentDelete = () => {
 		setTrashNotes((prev) => {
 			const updatedNotes = [...prev].filter(
-				(noteItem) => noteItem.id !== noteDetail
+				(noteItem) => noteItem.id !== noteDetail.id
 			);
 			return updatedNotes;
 		});
 		setIsModal(false);
+		enableBodyScroll();
 		navigate(-1);
 	};
 
