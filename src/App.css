@@ -50,17 +50,7 @@
 	width: 100%;
 	height: 30px;
 	position: relative;
-}
-
-.delete-div > .button-container::after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	height: 60%;
-	width: 2px;
-	background-color: rgb(255, 255, 255);
-	transform: translate(-50%, -50%);
+	padding-inline: 1.2rem;
 }
 
 .delete-div > .button-container > button {
@@ -79,4 +69,12 @@
 
 .delete-div > .button-container > button:hover {
 	background-color: #4a4a4a;
+}
+
+.delete-div .middle-div {
+	height: 70%;
+	width: 2px;
+	border: 1px solid white;
+	border-radius: 10px;
+	background-color: rgb(255, 255, 255);
 }

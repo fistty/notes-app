@@ -72,6 +72,7 @@ export const DeleteModal = ({
 						<button className="cancel-button" onClick={handleCancelButton}>
 							Cancel
 						</button>
+						<div className="middle-div"></div>
 						<button
 							className="delete-button"
 							onClick={permanentDelete ? handlePermanentDelete : handleConfirmDelete}
