@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import { useLoaderData, useNavigate } from "react-router-dom";
-import { FiStar, FiTrash } from "react-icons/fi";
+import { FiStar, FiTrash, FiTrash2 } from "react-icons/fi";
 import TitleInput from "../../components/TitleInput";
 import NoteText from "../../components/NoteText";
 import { useNoteContext } from "../../contexts/noteContext/useNoteContext";
@@ -102,7 +102,7 @@ export const Note = () => {
 					</button>
 
 					<button onClick={handleDelete} className="trash-button buttons">
-						<FiTrash size="1.4rem" className="trash-svg" title="Delete note" />
+						<FiTrash2 size="1.4rem" className="trash-svg" title="Delete note" />
 					</button>
 				</div>
 				<NoteText

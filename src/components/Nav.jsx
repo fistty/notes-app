@@ -4,7 +4,9 @@ import { NavMobile } from "./NavMobile";
 import { useEffect } from "react";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import { enableBodyScroll } from "../utils/helpers/bodyScroll";
+import { SlNotebook } from "react-icons/sl";
 import "./Nav.css";
+import { FiStar, FiTrash, FiTrash2 } from "react-icons/fi";
 
 function Nav() {
 	const { setIsBackdrop } = useNoteContext();
@@ -29,17 +31,17 @@ function Nav() {
 				</li>
 				<li className="nav-list">
 					<NavLink className="nav-a" to="/">
-						All Notes
+						<SlNotebook /> All Notes
 					</NavLink>
 				</li>
 				<li className="nav-list">
 					<NavLink className="nav-a" to="/favorite">
-						Favorites
+						<FiStar /> Favorites
 					</NavLink>
 				</li>
 				<li className="nav-list">
 					<NavLink className="nav-a" to="/trash">
-						Trash
+						<FiTrash2 /> Trash
 					</NavLink>
 				</li>
 			</ul>
