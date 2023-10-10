@@ -31,17 +31,26 @@ function Nav() {
 				</li>
 				<li className="nav-list">
 					<NavLink className="nav-a" to="/">
-						<SlNotebook /> All Notes
+						<span>
+							<SlNotebook />
+						</span>
+						All Notes
 					</NavLink>
 				</li>
 				<li className="nav-list">
 					<NavLink className="nav-a" to="/favorite">
-						<FiStar /> Favorites
+						<span>
+							<FiStar />
+						</span>
+						Favorites
 					</NavLink>
 				</li>
 				<li className="nav-list">
 					<NavLink className="nav-a" to="/trash">
-						<FiTrash2 /> Trash
+						<span>
+							<FiTrash2 />
+						</span>
+						Trash
 					</NavLink>
 				</li>
 			</ul>
