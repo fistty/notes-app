@@ -176,9 +176,9 @@ h1 {
 	.nav-ul {
 		background-color: #222;
 		position: absolute;
-		transform: translateX(-100%);
-		opacity: 0;
-		/* display: none; */
+		transform: translateX(-20%);
+		/* opacity: 0; */
+		display: none;
 
 		height: 100vh;
 		width: 100%;
@@ -192,14 +192,14 @@ h1 {
 	}
 
 	.nav-ul.active {
-		transform: translateX(-20%);
-		opacity: 1;
-		/* display: flex; */
+		/* transform: translateX(-20%); */
+		/* opacity: 1; */
+		display: flex;
 	}
 	.nav-ul.act {
-		transform: translate(-20%);
-		opacity: 1;
-		/* display: flex; */
+		/* transform: translate(-20%); */
+		/* opacity: 1; */
+		display: flex;
 	}
 
 	.nav-list-new {
