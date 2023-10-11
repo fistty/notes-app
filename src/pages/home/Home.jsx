@@ -1,13 +1,14 @@
 import { useEffect } from "react";
-import NoteList from "../components/NoteList";
-import { useNoteContext } from "../contexts/noteContext/useNoteContext";
+import NoteList from "../../components/NoteList";
+import { useNoteContext } from "../../contexts/noteContext/useNoteContext";
+import { NewNoteButton } from "../../components/NewNoteButton";
 import "./Home.css";
-import { NewNoteButton } from "../components/NewNoteButton";
 
 function Home() {
-	const { notes, setPath } = useNoteContext();
+	const { notes, setPath, setNoteCount } = useNoteContext();
 	useEffect(() => {
 		setPath("All Notes");
+		setNoteCount(notes.length);
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	}, [setPath]);
 

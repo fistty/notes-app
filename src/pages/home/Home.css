@@ -93,7 +93,7 @@ main {
 	background-color: #444;
 }
 
-.note-item h2 {
+.note-item h4 {
 	font-size: 1rem;
 	text-align: center;
 	text-overflow: ellipsis; /* enables ellipsis */
@@ -102,7 +102,7 @@ main {
 	margin-top: 0.5rem;
 }
 
-.note-item h3 {
+.note-item h5 {
 	font-size: 0.875rem;
 	text-align: center;
 	text-overflow: ellipsis;
