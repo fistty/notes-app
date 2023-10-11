@@ -1,8 +1,8 @@
-import React from "react";
 import { FaBars } from "react-icons/fa6";
 import { NewNoteButton } from "./NewNoteButton";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import { disableBodyScroll } from "../utils/helpers/bodyScroll";
+import { useEffect } from "react";
 
 export const NavMobile = () => {
 	const { setIsBackdrop } = useNoteContext();
@@ -21,6 +21,7 @@ export const NavMobile = () => {
 		setIsBackdrop(true);
 		disableBodyScroll();
 	};
+
 	return (
 		<ul className="nav-ul-mobile">
 			<li className="nav-mobile-li nav-mobile-bars">

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { PiNotePencilDuotone } from "react-icons/pi";
 import NoteList from "../components/NoteList";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import "./Home.css";

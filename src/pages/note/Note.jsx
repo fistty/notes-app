@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import { useLoaderData, useNavigate } from "react-router-dom";
-import { FiStar, FiTrash, FiTrash2 } from "react-icons/fi";
+import { FiStar, FiTrash2 } from "react-icons/fi";
 import TitleInput from "../../components/TitleInput";
 import NoteText from "../../components/NoteText";
 import { useNoteContext } from "../../contexts/noteContext/useNoteContext";
-import bodyScrollToggle from "body-scroll-toggle";
 import { DeleteModal } from "../../components/DeleteModal";
 import { disableBodyScroll } from "../../utils/helpers/bodyScroll";
 

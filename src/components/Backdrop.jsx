@@ -1,4 +1,3 @@
-import React from "react";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import bodyScrollToggle from "body-scroll-toggle";
 import { enableBodyScroll } from "../utils/helpers/bodyScroll";

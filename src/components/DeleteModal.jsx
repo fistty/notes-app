@@ -8,8 +8,7 @@ export const DeleteModal = ({
 	deleteButtonText,
 	permanentDelete,
 }) => {
-	const { setNotes, isModal, setIsModal, trashNotes, setTrashNotes } =
-		useNoteContext();
+	const { setNotes, isModal, setIsModal, setTrashNotes } = useNoteContext();
 
 	const navigate = useNavigate();
 

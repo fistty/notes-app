@@ -6,7 +6,7 @@ import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import { enableBodyScroll } from "../utils/helpers/bodyScroll";
 import { SlNotebook } from "react-icons/sl";
 import "./Nav.css";
-import { FiStar, FiTrash, FiTrash2 } from "react-icons/fi";
+import { FiStar, FiTrash2 } from "react-icons/fi";
 
 function Nav() {
 	const { setIsBackdrop } = useNoteContext();
