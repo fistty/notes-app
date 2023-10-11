@@ -195,9 +195,9 @@ h1 {
 	.nav-ul {
 		background-color: #222;
 		position: absolute;
-		transform: translateX(-20%);
+		transform: translateX(-100%);
 		top: 0;
-		display: none;
+		/* display: none; */
 		height: 100vh;
 		width: 100%;
 		flex-direction: column;
@@ -206,14 +206,16 @@ h1 {
 		padding-left: 20%;
 		z-index: 999;
 		border-top-right-radius: 20px;
-		transition: all 200ms ease;
+		transition: transform 100ms ease;
 	}
 
 	.nav-ul.active {
 		display: flex;
+		transform: translateX(-20%);
 	}
 	.nav-ul.act {
 		display: flex;
+		transform: translateX(-20%);
 	}
 
 	.nav-list-new {
