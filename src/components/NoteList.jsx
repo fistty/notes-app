@@ -44,8 +44,8 @@ function NoteList({ notes, path }) {
 					to={`/${path}/${item.id.toString()}`}
 				>
 					<p>{item.note}</p>
-					<h2>{handleNoTitle(item.title)}</h2>
-					<h3>
+					<h4>{handleNoTitle(item.title)}</h4>
+					<h5>
 						{dateFormat(item.createdAt)}{" "}
 						{item.favorite === true ? (
 							<FiStar
@@ -56,7 +56,7 @@ function NoteList({ notes, path }) {
 								fill="#ffe234"
 							/>
 						) : null}
-					</h3>
+					</h5>
 				</Link>
 			))}
 		</>
