@@ -185,7 +185,7 @@ h1 {
 		padding-left: 20%;
 		z-index: 999;
 		border-top-right-radius: 20px;
-		transition: transform 300ms ease, top 1ms ease;
+		transition: transform 100ms ease, top 1ms ease;
 	}
 
 	.nav-ul.active {
