@@ -1,11 +1,17 @@
-h1 {
+.root-div {
 	text-align: center;
-	color: var(--color-main);
+	margin-bottom: 3rem;
+}
+
+.note-count {
+	color: #999;
+	font-size: 1.2rem;
 }
 
 h1 {
+	color: var(--color-main);
+	padding-inline: 0.5rem;
 	padding-top: 3rem;
-	margin-bottom: 3rem;
 }
 
 .nav {
@@ -100,6 +106,16 @@ h1 {
 	padding-inline: unset;
 }
 
+.nav-list-note-count {
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: none;
+	color: #ddd;
+	font-weight: bold;
+}
+
 .nav-new {
 	color: black;
 	border: 1px solid var(--color-main);
@@ -162,6 +178,9 @@ h1 {
 }
 
 @media screen and (max-width: 540px) {
+	.root-div {
+		display: none;
+	}
 	.nav-ul-mobile {
 		display: flex;
 		justify-content: flex-end;
@@ -205,6 +224,7 @@ h1 {
 		width: 100%;
 		padding-inline: unset;
 		align-items: center;
+		position: relative;
 	}
 
 	.nav-list:not(.nav-list-new):hover {
@@ -253,5 +273,9 @@ h1 {
 
 	.nav-list .nav-a:hover::after {
 		display: none;
+	}
+
+	.nav-list-note-count {
+		display: block;
 	}
 }
