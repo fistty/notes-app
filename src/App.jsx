@@ -6,10 +6,10 @@ import {
 	RouterProvider,
 } from "react-router-dom";
 import Favorite from "./pages/favorite/Favorite";
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import RootLayout from "./layouts/RootLayout";
 import Trash from "./pages/trash/Trash";
-import NewNoteForm from "./pages/NewNoteForm";
+import NewNoteForm from "./components/NewNoteForm";
 import { useNoteContext } from "./contexts/noteContext/useNoteContext";
 import { Note } from "./pages/note/Note";
 import { noteLoader } from "./pages/note/noteLoader";
