@@ -177,9 +177,8 @@ h1 {
 		background-color: #222;
 		position: absolute;
 		transform: translateX(-20%);
-		/* opacity: 0; */
+		top: 0;
 		display: none;
-
 		height: 100vh;
 		width: 100%;
 		flex-direction: column;
@@ -188,17 +187,13 @@ h1 {
 		padding-left: 20%;
 		z-index: 999;
 		border-top-right-radius: 20px;
-		transition: all 200ms ease, top 1ms ease;
+		transition: all 200ms ease;
 	}
 
 	.nav-ul.active {
-		/* transform: translateX(-20%); */
-		/* opacity: 1; */
 		display: flex;
 	}
 	.nav-ul.act {
-		/* transform: translate(-20%); */
-		/* opacity: 1; */
 		display: flex;
 	}
 
@@ -242,7 +237,9 @@ h1 {
 	}
 
 	.nav-list .nav-a > span {
-		display: block;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.nav-list .nav-a.active {
