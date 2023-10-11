@@ -3,8 +3,8 @@ import { FaChevronLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { FiStar, FiTrash } from "react-icons/fi";
 import "./NewNote.css";
-import TitleInput from "../components/TitleInput";
-import NoteText from "../components/NoteText";
+import TitleInput from "./TitleInput";
+import NoteText from "./NoteText";
 import { generateUniqueId } from "../utils/helpers/generateRandomId";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 
