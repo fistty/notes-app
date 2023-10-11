@@ -8,7 +8,7 @@ function RootLayout() {
 
 	return (
 		<div className="root-layout">
-			<h1 className="root-h1">{path}</h1>
+			{/* <h1 className="root-h1">{path}</h1> */}
 			<Nav />
 			<main>
 				<Outlet />

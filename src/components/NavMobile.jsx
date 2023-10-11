@@ -12,10 +12,10 @@ export const NavMobile = () => {
 		const navUl = document.querySelector(".nav-ul");
 		const nav = document.querySelector(".nav");
 
-		// Calculates the distance of the nav element from the top of the page
-		// and the distance in which the window has been scrolled
-		let offset = nav.offsetTop - window.scrollY;
-		navUl.style.top = `-${offset}px`;
+		// // Calculates the distance of the nav element from the top of the page
+		// // and the distance in which the window has been scrolled
+		// let offset = nav.offsetTop - window.scrollY;
+		// navUl.style.top = `-${offset}px`;
 		navUl.classList.add("active");
 		navUl.classList.add("act");
 		setIsBackdrop(true);
