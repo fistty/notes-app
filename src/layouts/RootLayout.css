@@ -1,11 +1,12 @@
 .root-div {
 	text-align: center;
 	margin-bottom: 3rem;
+	line-height: 1;
 }
 
 .note-count {
 	color: #999;
-	font-size: 1.2rem;
+	font-size: 1rem;
 }
 
 h1 {
@@ -209,10 +210,6 @@ h1 {
 		transition: transform 100ms ease;
 	}
 
-	.nav-ul.active {
-		display: flex;
-		transform: translateX(-20%);
-	}
 	.nav-ul.act {
 		display: flex;
 		transform: translateX(-20%);

@@ -6,7 +6,6 @@ export const Backdrop = () => {
 	const { setIsBackdrop, setIsModal } = useNoteContext();
 	const handleClick = () => {
 		const navUl = document.querySelector(".nav-ul");
-		navUl.classList.remove("active");
 		navUl.classList.remove("act");
 
 		bodyScrollToggle.enable();

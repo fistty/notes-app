@@ -9,7 +9,6 @@ export const NavMobile = () => {
 	const handleClick = () => {
 		// To get the side menu to stay on top of the screen
 		const navUl = document.querySelector(".nav-ul");
-		navUl.classList.add("active");
 		navUl.classList.add("act");
 		setIsBackdrop(true);
 		disableBodyScroll();
