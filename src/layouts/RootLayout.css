@@ -210,7 +210,7 @@ h1 {
 		transition: transform 100ms ease;
 	}
 
-	.nav-ul.act {
+	.nav-ul.active {
 		display: flex;
 		transform: translateX(-20%);
 	}
