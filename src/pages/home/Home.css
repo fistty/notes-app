@@ -118,10 +118,13 @@ main {
 	gap: 0.4rem;
 }
 
-.not-found {
+.not-found,
+.note-error {
 	text-align: center;
 }
-.not-found > p {
+
+.not-found > p,
+.note-error > p {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -130,7 +133,8 @@ main {
 	gap: 0.4rem;
 }
 
-.not-found a {
+.not-found a,
+.note-error a {
 	text-decoration: underline white;
 	color: white;
 }

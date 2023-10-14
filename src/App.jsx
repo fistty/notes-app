@@ -19,7 +19,8 @@ import { TrashNote } from "./pages/trash/TrashNote";
 import { trashNoteLoader } from "./pages/trash/trashNoteLoader";
 import { Backdrop } from "./components/Backdrop";
 import "./App.css";
-import { NotFound } from "./pages/NotFound";
+import { NotFound } from "./pages/notFound/NotFound";
+import { NoteError } from "./pages/note/NoteError";
 
 function App() {
 	const { notes, setNotes, trashNotes, setTrashNotes, isBackdrop, isModal } =
@@ -31,25 +32,29 @@ function App() {
 			<Route path="/" element={<RootLayout />}>
 				<Route index element={<Home />}></Route>
 				<Route
+					path="note/:id"
+					element={<Note />}
+					loader={(e) => noteLoader(e, notes)}
+					errorElement={<NoteError />}
+				></Route>
+				<Route
 					path="favorite"
 					element={<Favorite />}
 					loader={() => favoriteLoader(notes)}
+					errorElement={<NoteError />}
 				></Route>
 				<Route
 					path="trash"
 					element={<Trash />}
 					loader={() => trashLoader(trashNotes)}
+					errorElement={<NoteError />}
 				></Route>
 				<Route path="new" element={<NewNoteForm />}></Route>
-				<Route
-					path="note/:id"
-					element={<Note />}
-					loader={(e) => noteLoader(e, notes)}
-				></Route>
 				<Route
 					path="trash/:id"
 					element={<TrashNote />}
 					loader={(e) => trashNoteLoader(e, trashNotes)}
+					errorElement={<NoteError />}
 				></Route>
 
 				<Route path="*" element={<NotFound />} />
