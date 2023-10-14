@@ -19,6 +19,7 @@ import { TrashNote } from "./pages/trash/TrashNote";
 import { trashNoteLoader } from "./pages/trash/trashNoteLoader";
 import { Backdrop } from "./components/Backdrop";
 import "./App.css";
+import { NotFound } from "./pages/NotFound";
 
 function App() {
 	const { notes, setNotes, trashNotes, setTrashNotes, isBackdrop, isModal } =
@@ -50,6 +51,8 @@ function App() {
 					element={<TrashNote />}
 					loader={(e) => trashNoteLoader(e, trashNotes)}
 				></Route>
+
+				<Route path="*" element={<NotFound />} />
 			</Route>
 		)
 	);

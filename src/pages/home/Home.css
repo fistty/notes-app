@@ -2,6 +2,7 @@ main {
 	max-width: 1460px;
 	margin: 0 auto;
 	min-height: 100vh;
+	margin-bottom: 2rem;
 }
 
 .home-empty h1 {
@@ -115,4 +116,21 @@ main {
 	justify-content: center;
 	align-items: center;
 	gap: 0.4rem;
+}
+
+.not-found {
+	text-align: center;
+}
+.not-found > p {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1rem;
+	gap: 0.4rem;
+}
+
+.not-found a {
+	text-decoration: underline white;
+	color: white;
 }
