@@ -56,8 +56,8 @@ export const Note = () => {
 
 	const handleDelete = (e) => {
 		e.preventDefault();
+		// Toggles DeleteModal component
 		setIsModal(true);
-		// bodyScrollToggle.disable();
 		disableBodyScroll();
 	};
 
