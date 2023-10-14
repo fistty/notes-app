@@ -85,12 +85,6 @@ function App() {
 
 	return (
 		<>
-			<button className="clear" onClick={clear}>
-				CLEAR
-			</button>
-			<button className="get" onClick={get}>
-				GET
-			</button>
 			{(isModal || isBackdrop) && <Backdrop />}
 
 			<RouterProvider router={router} />
