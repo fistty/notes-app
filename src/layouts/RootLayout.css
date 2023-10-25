@@ -1,12 +1,16 @@
 .root-div {
 	text-align: center;
-	margin-bottom: 3rem;
+	padding-bottom: 3rem;
 	line-height: 1;
+	background-image: url("../assets//background.jpg");
+	background-position: top;
+	background-size: cover;
 }
 
 .note-count {
-	color: #999;
-	font-size: 1rem;
+	color: #959595;
+	font-size: 1.1rem;
+	margin-top: 0.2rem;
 }
 
 h1 {
@@ -17,6 +21,9 @@ h1 {
 
 .nav {
 	background-color: #000;
+	background-image: url("../assets//background.jpg");
+	background-position: top;
+	background-size: cover;
 	border-bottom: 2px solid #333;
 	height: 2.6875rem;
 	position: sticky;
@@ -151,6 +158,12 @@ h1 {
 
 .nav-mobile-li {
 	display: flex;
+	list-style: unset;
+}
+
+.nav-mobile-path {
+	font-size: 1.2rem;
+	margin-left: 0.5rem;
 }
 
 .nav-mobile-bars {
