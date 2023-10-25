@@ -19,12 +19,6 @@ function Nav() {
 				enableBodyScroll();
 			})
 		);
-
-		return () => {
-			navList.forEach((item) => {
-				item.removeEventListener("click", clickHandler);
-			});
-		};
 	}, []);
 
 	return (

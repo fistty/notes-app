@@ -62,15 +62,6 @@ function App() {
 		)
 	);
 
-	const clear = () => {
-		localStorage.clear();
-		console.log(localStorage);
-	};
-
-	const get = () => {
-		console.log(localStorage.getItem("trash"));
-	};
-
 	useEffect(() => {
 		const loadNotes = () => {
 			// Load notes from localStorage

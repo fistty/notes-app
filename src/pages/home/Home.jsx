@@ -9,7 +9,7 @@ function Home() {
 	useEffect(() => {
 		setPath("All Notes");
 		setNoteCount(notes.length);
-		window.scrollTo({ top: 0, behavior: "smooth" });
+		window.scrollTo({ top: 0, behavior: "instant" });
 	}, [setPath]);
 
 	if (notes.length < 1) {
