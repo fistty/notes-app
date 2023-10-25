@@ -49,11 +49,19 @@ export const TrashNote = () => {
 	};
 
 	useEffect(() => {
-		setPath("Trash");
+		setPath("Trash Note");
 		window.scrollTo({ top: 0, behavior: "smooth" });
 		setNoteText(trashNoteDetail.note);
 		setTitle(trashNoteDetail.title);
 	}, [setPath, trashNoteDetail]);
+
+	useEffect(() => {
+		const nav = document.querySelector(".nav");
+		nav.style.position = "relative";
+		return () => {
+			nav.style.position = "";
+		};
+	}, []);
 
 	return (
 		<div className="trash-note note">

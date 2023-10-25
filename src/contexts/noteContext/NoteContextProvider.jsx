@@ -15,6 +15,25 @@ export const NoteContextProvider = ({ children }) => {
 		setFavoriteNotes(favNotes);
 	}, [notes]);
 
+	useEffect(() => {
+		switch (path) {
+			case "All Notes":
+				setNoteCount(parseInt(notes.length));
+				break;
+
+			case "Favorites":
+				setNoteCount(parseInt(favoriteNotes.length));
+				break;
+
+			case "Trash":
+				setNoteCount(parseInt(trashNotes.length));
+				break;
+
+			default:
+				return setNoteCount(null);
+		}
+	}, [path, notes, favoriteNotes, trashNotes]);
+
 	return (
 		<NoteContext.Provider
 			value={{

@@ -4,12 +4,11 @@ import { useLoaderData } from "react-router-dom";
 import NoteList from "../../components/NoteList";
 
 function Favorite() {
-	const { setPath, setNoteCount } = useNoteContext();
+	const { setPath } = useNoteContext();
 	const favoriteNotes = useLoaderData();
 	useEffect(() => {
 		setPath("Favorites");
-		setNoteCount(favoriteNotes.length);
-		window.scrollTo({ top: 0, behavior: "smooth" });
+		window.scrollTo({ top: 0, behavior: "instant" });
 	}, [setPath]);
 
 	if (favoriteNotes.length < 1) {

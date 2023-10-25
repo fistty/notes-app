@@ -3,8 +3,9 @@ import { NewNoteButton } from "./NewNoteButton";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 import { disableBodyScroll } from "../utils/helpers/bodyScroll";
 import { Backdrop } from "./Backdrop";
+
 export const NavMobile = () => {
-	const { isBackdrop, isModal, setIsBackdrop } = useNoteContext();
+	const { isBackdrop, isModal, setIsBackdrop, path } = useNoteContext();
 
 	const handleClick = () => {
 		// To get the side menu to stay on top of the screen
@@ -25,6 +26,9 @@ export const NavMobile = () => {
 						onClick={handleClick}
 					/>
 				</button>
+			</li>
+			<li className="nav-mobile-li nav-mobile-path">
+				<strong>{path}</strong>
 			</li>
 			<li className="nav-mobile-li nav-mobile-new">
 				{(isModal || isBackdrop) && <Backdrop />}

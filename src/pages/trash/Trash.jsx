@@ -4,12 +4,12 @@ import { useLoaderData } from "react-router-dom";
 import NoteList from "../../components/NoteList";
 
 function Trash() {
-	const { setPath, setNoteCount } = useNoteContext();
+	const { setPath } = useNoteContext();
 	const trashNotes = useLoaderData();
 
 	useEffect(() => {
 		setPath("Trash");
-		setNoteCount(trashNotes.length);
+		window.scrollTo({ top: 0, behavior: "instant" });
 	}, [setPath]);
 
 	if (trashNotes.length < 1) {
