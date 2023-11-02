@@ -25,10 +25,6 @@
 	--font-roboto: "Roboto", sans-serif;
 }
 
-html {
-	/* overflow: hidden; */
-}
-
 body {
 	color: var(--color-main);
 	background-color: #111111;
