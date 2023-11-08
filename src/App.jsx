@@ -65,16 +65,7 @@ function App() {
 	useEffect(() => {
 		const loadNotes = () => {
 			// Load notes from localStorage
-			localStorage.clear();
-			const storedNotes = JSON.parse(localStorage.getItem("notes")) || [
-				{
-					id: 1,
-					title: "This is the note title",
-					note: "This is the note",
-					favorite: true,
-					createdAt: new Date(),
-				},
-			];
+			const storedNotes = JSON.parse(localStorage.getItem("notes")) || [];
 			setNotes(storedNotes);
 
 			// Load deleted notes from localStorage
