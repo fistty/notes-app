@@ -10,7 +10,7 @@ function TitleInput({ title, setTitle, setSave, disabled }) {
 		<>
 			<input
 				className="title-input"
-				placeholder="Title"
+				placeholder="Note title"
 				value={title}
 				onChange={handleChange}
 				name="title"
