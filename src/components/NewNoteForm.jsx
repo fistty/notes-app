@@ -9,11 +9,11 @@ import { generateUniqueId } from "../utils/helpers/generateRandomId";
 import { useNoteContext } from "../contexts/noteContext/useNoteContext";
 
 function NewNoteForm() {
-	const [title, setTitle] = useState("This is the Title ");
-	const [noteText, setNoteText] = useState("This is a note ");
+	const [title, setTitle] = useState("");
+	const [noteText, setNoteText] = useState("");
 	const [isFavorite, setIsFavorite] = useState(false);
 
-	const { setNotes, setPath } = useNoteContext();
+	const { setNotes, path, setPath } = useNoteContext();
 	const navigate = useNavigate();
 
 	const handleBackButton = (e) => {
@@ -49,7 +49,21 @@ function NewNoteForm() {
 
 	useEffect(() => {
 		setPath("New Note");
+		console.log(path);
 	}, [setPath]);
+
+	useEffect(() => {
+		const preventExit = function (e) {
+			e.preventDefault();
+		};
+
+		window.addEventListener("beforeunload", preventExit);
+
+		return () => {
+			window.removeEventListener("beforeunload", preventExit);
+			console.log("DID");
+		};
+	}, []);
 
 	return (
 		<div className="new-note">

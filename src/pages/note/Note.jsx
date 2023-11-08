@@ -77,6 +77,19 @@ export const Note = () => {
 		};
 	}, []);
 
+	useEffect(() => {
+		const preventExit = function (e) {
+			e.preventDefault();
+		};
+
+		window.addEventListener("beforeunload", preventExit);
+
+		return () => {
+			window.removeEventListener("beforeunload", preventExit);
+			console.log("DID");
+		};
+	}, []);
+
 	return (
 		<div className="new-note note">
 			<DeleteModal
